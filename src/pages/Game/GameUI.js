@@ -19,13 +19,13 @@ function GameUI() {
   const [selectedCard, setSelectedCard] = useState({});
   const [eventsHappened, setEventsHappened] = useState([]);
 
-    useEffect(async()=> {
+    useEffect(async ()=> {
       const initData = await axios.post('http://localhost:5000/api/newGame');
         console.log("INIT DATA:", initData);
         setCurrentEvent(initData.data.content.cards);
         setStats(initData.data.content.stats);
         
-    }, [])
+    })
 
   const handleCardClick = (card) => {
     setSelectedCard(card);

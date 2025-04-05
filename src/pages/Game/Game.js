@@ -5,6 +5,7 @@ import CardsDeck from './components/cardsDeck';
 import RandomEventPopup from './components/randomEventPopup';
 import { gameEvents } from '../../data/gameEvents';
 import './Game.css';
+import axios from "axios";
 
 export default function Game() {
     const [stats, setStats] = useState({
@@ -23,10 +24,6 @@ export default function Game() {
             console.log(error)
         }
     };
-
-    useEffect(()=>{
-    
-    })
 
     const [currentEvent, setCurrentEvent] = useState();
     const [selectedCard, setSelectedCard] = useState(null);
