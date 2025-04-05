@@ -26,7 +26,7 @@ const getJson = (relevanceMinimum, tags, optimism) => {
             for (let entry of data) {
                 let year = getEntryDate(entry, optimism);
                 if (entry["relevance"] >= relevanceMinimum &&
-                    entry["tags"].some(tag => tags.includes(tag)) &&
+                    (entry["tags"].some(tag => tags.includes(tag)) || tags.includes("All")) &&
                     year !== null) {
                     output.push({
                         title: entry["title"],
@@ -37,7 +37,9 @@ const getJson = (relevanceMinimum, tags, optimism) => {
                     })
                 }
             }
-            return output
+            output.sort((a, b) => a.date-b.date);
+            console.log('all events',output)
+            return output;
         })
 }
 
@@ -45,11 +47,11 @@ const App = () => {
     const [events, setEvents] = useState([]);
     const [loadedEvents, setLoadedEvents] = useState(0);
     const [allEvents, setAllEvents] = useState([]);
-    const eventsPerLoad = 6;
+    const eventsPerLoad = 20;
 
     useEffect(() => {
         const fetchData = async () => {
-            const result = await getJson(0, ["Science"], 0.6);
+            const result = await getJson(0, ["All"], 0.8);
             setAllEvents(result);
             setEvents(result.slice(0, eventsPerLoad));
             setLoadedEvents(eventsPerLoad);
