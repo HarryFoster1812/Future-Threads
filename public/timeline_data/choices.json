@@ -1,0 +1,185 @@
+[
+	{
+		"title": "Bailout Corporations",
+		"description": "Save big businesses to protect jobs.",
+		"effects": {
+			"economy": [15, 20],
+			"qualityOfLife": [-10,-20]
+		}
+	},
+	{
+		"title": "Ban Smoking",
+		"description": "Go against the corporate lobbing, burn down the tobacco industry.",
+		"effects": {
+			"economy": [-5, -10],
+			"qualityOfLife": [10, 20],
+			"politics": [-10, 10],
+			"environment": [2, 5],
+			"military": [0,0]
+		}
+	},
+	{
+		"title": "Do Nothing",
+		"description": "This is politics, isn't this what happens in the end?",
+		"effects": {
+			"economy": [-10, 10],
+			"qualityOfLife": [-10, 10],
+			"politics": [-10, 10],
+			"environment": [-10, 10],
+			"military": [-10, 10]
+		}
+	},
+	{
+		"title": "Institute Universal Basic Income",
+		"description": "Everyone has basic costs covered, but work still needs to be done. How do the people feel about stuff for nothing?",
+		"effects": {
+			"economy": [5,15],
+			"qualityOfLife": [10, 20],
+			"politics": [-5, 10]
+		}
+	},
+	{
+		"title": "Invest in Fossil Fuels",
+		"description": "Lot of jobs, but at what cost?",
+		"effects": {
+			"economy": [5, 10],
+			"qualityOfLife": [-5, -10],
+			"environment": [-15, -30]
+		}
+	},
+	{
+		"title": "Increase Military Spending",
+		"description": "The people need protection, who are you to deny it?",
+		"effects": {
+			"economy": [5, 10],
+			"politics": [-10, -5],
+			"military": [5, 15]
+		}
+	},
+	{
+		"title": "Institute Basic Rights for All",
+		"description": "Companies claim they cant use user data now, but we must protect the people",
+		"effects": {
+			"economy": [-10, 5],
+			"qualityOfLife": [5, 10],
+			"politics": [10, 15]
+		}
+	},
+	{
+		"title": "Improve Industry",
+		"description": "Dig! Dig! Dig!",
+		"effects": {
+			"economy": [10, 15],
+			"qualityOfLife": [-5, -10],
+			"politics": [-5, 10],
+			"environment": [-10, -5]
+		}
+	},
+	{
+		"title": "Protect Wildlife",
+		"description": "What? You want to build your factory in this park?",
+		"effects": {
+			"economy": [-10, -5],
+			"qualityOfLife": [5, 10],
+			"environment": [10, 15]
+		}
+	},
+	{
+		"title": "France",
+		"description": "Baguettes? Wine? Disliking the English? what else is there?",
+		"effects": {
+			"economy": [-10, 10],
+			"qualityOfLife": [-20, 10],
+			"politics": [-10, 10],
+			"environment": [-10, 10],
+			"military": [-10, 10]
+		}
+	},
+	{
+		"title": "Automate Menial Jobs",
+		"description": "People will be much happier without those boring, repetitive, easily replaceable jobs",
+		"effects": {
+			"economy": [-5, 10],
+			"qualityOfLife": [-10, 5],
+			"politics": [-15, -5]
+		}
+	},
+	{
+		"title": "Privatize Rail",
+		"description": "What could go wrong? said the iron lady",
+		"effects": {
+			"economy": [-10, 5],
+			"qualityOfLife": [-10, -5],
+			"politics": [5, 10]
+		}
+	},
+	{
+		"title": "Improve Weapons Trade",
+		"description": "We need better pointy sticks if they have pointier sticks!",
+		"effects": {
+			"economy": [5, 10],
+			"qualityOfLife": [-10, -5],
+			"politics": [-10, 10],
+			"military": [10, 20]
+		}
+	},
+	{
+		"title": "Support Mothers Needs",
+		"description": "We have to boost birth rates somehow!",
+		"effects": {
+			"economy": [-5, 10],
+			"qualityOfLife": [5, 10],
+			"politics": [-10, 5]
+		}
+	},
+	{
+		"title": "Form an International Union",
+		"description": "Maybe its across Europe? maybe it will make the nations united?",
+		"effects": {
+			"economy": [10, 15],
+			"qualityOfLife": [5, 10],
+			"politics": [-10, 10],
+			"environment": [-10, 5],
+			"military": [-5, 5]
+		}
+	},
+	{
+		"title": "Improve Public Transport",
+		"description": "Choo Choo!",
+		"effects": {
+			"economy": [10, 20],
+			"qualityOfLife": [5, 20],
+			"politics": [-10, 5],
+			"environment": [10, 15]
+		}
+	},
+	{
+		"title": "World Peace",
+		"description": "Peace for our Time",
+		"effects": {
+			"economy": [5, 10],
+			"politics": [5, 20],
+			"military": [-20, 20]
+		}
+	},
+	{
+		"title": "Free Public Housing",
+		"description": "But wait? why is it near the factories",
+		"effects": {
+			"economy": [5, 10],
+			"qualityOfLife": [5, 10],
+			"politics": [-10, 5]
+		}
+	},
+	{
+		"title": "Nationalize Food Supply",
+		"description": "Let them eat cake",
+		"effects": {
+			"economy": [-5, 0],
+			"qualityOfLife": [10, 15],
+			"politics": [-5, 10],
+			"environment": [5, 10]
+		}
+	}
+]
+
