@@ -82,66 +82,7 @@ app.use(
   })
 );
 
-// Sample route to set user session
-app.post('/login', (req, res) => {
-  const { email, password } = req.body;
 
-  // Dummy authentication logic (replace with real logic)
-  if (email === 'user@example.com' && password === 'password123') {
-    // Store user info in session
-    req.session.user = {
-      email: email,
-      loggedIn: true
-    };
-    return res.status(200).json({ message: 'Login successful', user: req.session.user });
-  }
-
-  return res.status(401).json({ message: 'Invalid credentials' });
-});
-
-// Sample route to check if the user is logged in
-app.get('/profile', (req, res) => {
-  if (req.session.user && req.session.user.loggedIn) {
-    return res.status(200).json({ message: 'User is logged in', user: req.session.user });
-  }
-
-  return res.status(401).json({ message: 'You need to log in first' });
-});
-
-// Sample route to log out
-app.post('/logout', (req, res) => {
-  req.session.destroy((err) => {
-    if (err) {
-      return res.status(500).json({ message: 'Failed to log out' });
-    }
-
-    res.status(200).json({ message: 'Logged out successfully' });
-  });
-});
-
-function execQuery(query) {
-    connection.connect(error => {
-        if (error) {
-            console.error('Error connecting to the database:', error);
-            return;
-        }
-        console.log('Connected to the database');
-    });
-
-    // Run a database query
-    connection.query(query, (error, results) => {
-        if (error) {
-            console.error('Error executing query:', error);
-            connection.end();
-            return;
-        }
-        connection.end();
-        return results;
-    });
-
-    // Close the connection
-    connection.end();
-}
 
 getJson().then(() => {
     app.listen(PORT, () => {
