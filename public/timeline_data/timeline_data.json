@@ -118,6 +118,7 @@
     "title": "Cure for Cancer",
     "description": "cure_for_cancer.jpg",
     "image": "",
+    "source": [],
     "optimism": [
       {
         "lowerBound": 0,
