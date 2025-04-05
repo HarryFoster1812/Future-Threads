@@ -1,0 +1,79 @@
+.cards-deck-container {
+    position: fixed;
+    bottom: 40px; /* Push cards up from bottom */
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .cards-deck {
+    display: flex;
+    gap: 20px;
+    max-width: 900px;
+    padding: 0 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    background: #252545;
+    border-radius: 12px;
+    padding: 20px;
+    width: 250px;
+    min-height: 180px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    border-color: #6a5acd;
+    box-shadow: 0 5px 15px rgba(106, 90, 205, 0.3);
+  }
+  
+  .card.selected {
+    border-color: #ff6b6b;
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+  }
+  
+  .card.fade-out {
+    opacity: 0.3;
+    filter: grayscale(80%);
+    transform: scale(0.95);
+  }
+  
+  .card h3 {
+    margin-top: 0;
+    color: #f0f0f0;
+  }
+  
+  .card p {
+    color: #ccc;
+    flex-grow: 1;
+  }
+  
+  .card-effects {
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .effect {
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.3);
+  }
+  
+  .effect.positive {
+    color: #51cf66;
+  }
+  
+  .effect.negative {
+    color: #ff6b6b;
+  }

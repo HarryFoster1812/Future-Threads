@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #ffffff;
 }
 
 .App-logo {
@@ -125,3 +126,46 @@
 
 .event:nth-child(odd) { animation-delay: 0.2s; }
 .event:nth-child(even) { animation-delay: 0.4s; }
+
+/* Base Background - Change this color to whatever you want */
+.game-container {
+  background: #2a0a4a; /* Deep purple example - CHANGE THIS */
+  min-height: 100vh;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  color: white;
+  transition: background-color 0.5s ease; /* Smooth theme transitions */
+}
+
+/* Dynamic Theme Overrides - Keep these */
+.game-container.war {
+  background: #3a0a0a !important; /* Red war theme */
+  animation: pulseDanger 5s infinite alternate;
+}
+
+.game-container.nature {
+  background: #0a3a1a !important; /* Green nature theme */
+  animation: pulseNature 8s infinite alternate;
+}
+
+.game-container.wealth {
+  background: #3a3a0a !important; /* Gold wealth theme */
+  animation: pulseWealth 7s infinite alternate;
+}
+
+/* Animation Keyframes - Keep these */
+@keyframes pulseDanger {
+  0% { background-color: #3a0a0a; }
+  100% { background-color: #5a0a0a; }
+}
+
+@keyframes pulseNature {
+  0% { background-color: #0a3a1a; }
+  100% { background-color: #0a5a2a; }
+}
+
+@keyframes pulseWealth {
+  0% { background-color: #3a3a0a; }
+  50% { background-color: #5a5a0a; }
+  100% { background-color: #3a3a0a; }
+}

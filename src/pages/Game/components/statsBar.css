@@ -1,0 +1,80 @@
+.stats-bar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 250px; /* Increased from 200px */
+  height: 100vh;
+  background: rgba(30, 30, 60, 0.9);
+  padding: 25px;
+  border-left: 1px solid #444;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.stat-item {
+  margin-bottom: 25px; /* Increased spacing */
+}
+
+.stat-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.stat-icon {
+  font-size: 1.5em;
+  width: 30px;
+  text-align: center;
+}
+
+.stat-label {
+  font-weight: bold;
+  color: #ddd;
+  font-size: 1.1em; /* Larger text */
+  text-transform: capitalize; /* Changed from uppercase */
+  letter-spacing: 0.5px;
+}
+
+.stat-bar-container {
+  height: 12px; /* Thicker bar */
+  background: #2d2d4d;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 8px 0;
+}
+
+.stat-bar {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.stat-value {
+  display: block;
+  text-align: right;
+  color: #aaa;
+  font-size: 0.9em;
+}
+
+/* Color variations for different stats */
+.stat-item[data-stat="military"] .stat-bar {
+  background: linear-gradient(90deg, #ff6b6b, #ff8e8e);
+}
+
+.stat-item[data-stat="politics"] .stat-bar {
+  background: linear-gradient(90deg, #70a1ff, #87cefa);
+}
+
+.stat-item[data-stat="environment"] .stat-bar {
+  background: linear-gradient(90deg, #51cf66, #7bed9f);
+}
+
+.stat-item[data-stat="qualityOfLife"] .stat-bar {
+  background: linear-gradient(90deg, #fcc419, #ffe066);
+}
+
+.stat-item[data-stat="economy"] .stat-bar {
+  background: linear-gradient(90deg, #9c88ff, #b8a9ff);
+}
