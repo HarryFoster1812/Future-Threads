@@ -5,7 +5,7 @@
 const fs = require('fs');
 const { createClient, toWav } = require('@neuphonic/neuphonic-js');
 const dotenv = require('dotenv');
-const { readFile } = require('node:fs/promises');
+const path = require("path");
 
 dotenv.config();
 
@@ -31,11 +31,9 @@ async function generateText(description) {
 	  return toWav(res.audio);
 }
 
-async function getAudio(title) {
+async function getAudioPath(title) {
 	if (fs.existsSync(outputDir + `/${title}.wav`)) { // exists already
 		console.log("title exists already for voice")
-		const wav = await readFile(outputDir + `/${title}.wav`)
-		return new Uint8Array(wav);
 	} else {
 		// generate file and save it for future use
 		console.log("title doesnt exist for voice")
@@ -43,13 +41,8 @@ async function getAudio(title) {
 		console.log("content is generated");
 		
 		fs.writeFileSync(outputDir + `/${title}.wav`, wav);
-		return wav
 	}
+	return path.join(__dirname, outputDir + `/${title}.wav`)
 }
 
-(async () => {
-    await getAudio("meow")
-	await new Promise(r => setTimeout(r, 10000)); // wait for time 
-})().catch(e => {
-    // Deal with the fact the chain failed
-});
+module.exports = getAudioPath

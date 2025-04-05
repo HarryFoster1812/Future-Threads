@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const { GoogleGenerativeAI } = require("@google/generative-ai");
+const getAudioPath = require("./voiceGen")
 
 dotenv.config();
 
@@ -36,6 +37,11 @@ app.post('/api/chat', async (req, res) => {
         res.status(500).json({ error: 'Something went wrong' });
     }
 });
+
+app.get("/api/voice/:title", async (req, res) => {
+    const audioPath = await getAudioPath(req.params.title)
+    res.sendFile(audioPath)
+  })
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
