@@ -99,10 +99,12 @@ class GameManagerClass {
         let cards = [...this.cards];
         let selectedCards = [];
         for (let i=0;i<3;i++) {
-            let index = random_range(0,this.cards.length-1);
+            let index = random_range(0, this.cards.length - 1);
             selectedCards.push(this.cards[index]);
+            console.log('pushing',index,this.cards,this.cards[index]);
             cards.splice(index, 1)
         }
+        console.log('selected cards',selectedCards);
         return selectedCards
     }
     getGameStat() {
