@@ -92,7 +92,7 @@ data = [
 
     {"title":"First AGI",
      "description":"AGI refers to a type of artificial intelligence capable of performing any intellectual task that a human can do, with the ability to learn, adapt, and generalize across a wide range of activities.",
-     "image":"first_AGI.png",
+     "image":"first_AGI.webp",
      "source": [],
      "optimism":[{"lowerBound":0, "upperBound":0.25},
                  {"lowerBound":0.7, "upperBound":1}],
@@ -219,7 +219,7 @@ data = [
      {
        "title": "Treaty to Eliminate All Nuclear Weapons",
        "description": "A landmark global agreement leads to verified dismantling of all nuclear weapons, reducing existential risk for humanity.",
-       "image": "nuclear_disarmament.jpg",
+       "image": "nuclear_disarmament.webp",
        "source": ["https://www.un.org/disarmament/wmd/nuclear/tpnw/"],
        "optimism": [{"lowerBound": 0.7, "upperBound": 1.0}],
        "dateRange": {"earliestYear": 2035, "latestYear": 2100},
@@ -228,7 +228,7 @@ data = [
        "tags": ["Politics", "Social", "Environment"]
      },
      {
-       "title": "Cyberwar Causes Infrastructure Collapse",
+       "title": "Cyber War Causes Infrastructure Collapse",
        "description": "A massive cyberattack cripples major infrastructure — including power grids and internet — causing widespread chaos and economic damage.",
        "image": "cyberwar_infra.jpg",
        "source": ["https://www.cisa.gov/topics/cyber-threats"],
@@ -274,7 +274,7 @@ data = [
   {
     "title": "First Human Brain Emulation",
     "description": "A complete simulation of a human brain at the neuronal level is achieved, representing a breakthrough in neuroscience and AI modeling.",
-    "image": "brain_emulation.jpg",
+    "image": "brain_emulation.png",
     "source": ["https://en.wikipedia.org/wiki/Whole_brain_emulation"],
     "optimism": [{"lowerBound": 0.3, "upperBound": 0.8}],
     "dateRange": {"earliestYear": 2040, "latestYear": 2080},
@@ -367,7 +367,7 @@ data = [
     "optimism": [{"lowerBound": 0.2, "upperBound": 0.7}],
     "dateRange": {"earliestYear": 2035, "latestYear": 2080},
     "relevance": 0.8,
-    "isPositive": False,
+    "isPositive": True,
     "tags": ["Environment", "Science", "Politics"]
   },
   {
@@ -384,7 +384,7 @@ data = [
   {
     "title": "Global Treaty on Climate Justice",
     "description": "A legally binding international framework is created to compensate countries most affected by climate change, addressing historical emissions and inequity.",
-    "image": "climate_justice_treaty.jpg",
+    "image": "climate_justice_treaty.png",
     "source": ["https://www.un.org/en/climatechange/adaptation-loss-and-damage"],
     "optimism": [{"lowerBound": 0.5, "upperBound": 0.9}],
     "dateRange": {"earliestYear": 2030, "latestYear": 2060},
@@ -395,7 +395,7 @@ data = [
   {
     "title": "Global Coral Reef Collapse",
     "description": "Warming oceans and acidification cause over 90% of coral reefs to die off, leading to massive biodiversity loss and impacts to food chains and tourism economies.",
-    "image": "coral_reef_collapse.jpg",
+    "image": "coral_reef_collapse.webp",
     "source": ["https://www.ipcc.ch/report/ar6/wg2/"],
     "optimism": [{"lowerBound": 0, "upperBound": 0.3}],
     "dateRange": {"earliestYear": 2025, "latestYear": 2055},
