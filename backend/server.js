@@ -99,20 +99,6 @@ app.post('/api/chat', async (req, res) => {
 
 // GAME API CALLS
 
-// Set up session middleware
-app.use(
-  session({
-    secret: 'your-secret-key', // Replace with a secure key for your app
-    resave: false,             // Avoid saving session if unmodified
-    saveUninitialized: true,   // Save session for new users
-    cookie: {
-      secure: false,           // Set to `true` if using HTTPS
-      maxAge: 1000 * 60 * 60   // Set session expiration (1 hour)
-    }
-  })
-);
-
-
 
 app.post('/api/incYear', async (req, res) => {
     req.session.gameManager.incrementYear();
