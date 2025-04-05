@@ -27,7 +27,7 @@ function Filter() {
 
     return (
         <>
-            <div className="p-4 top-0 sticky">
+            <div className="p-4 top-0 sticky z-10 bg-black">
                 <button
                     onClick={toggleModal}
                     className="bg-blue-500 p-2 rounded-md text-white flex items-center"
