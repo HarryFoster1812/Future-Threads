@@ -6,7 +6,7 @@ const Test = () => {
 
 const handleSendMessage = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/api/filteredEvents');
+      const response = await axios.post('http://localhost:5000/api/newGame');
     console.log(response);
     } catch (error) {
             console.log(error)
