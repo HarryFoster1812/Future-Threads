@@ -1488,5 +1488,8 @@ data = [
 
 
 with open("timeline_data.json","w") as f:
-    json.dump(data, f)
+    edited_data = {}
+    for i in range(len(data)):
+        edited_data[i] = data[i]
+    json.dump(edited_data, f)
 
