@@ -50,10 +50,14 @@ class GameManagerClass {
     }
     incrementYear(selectedCard) {
 
+        this.applyCard(this.currentCards[selectedCard]);
+        let initialStats = {...this.stats}
+
         let newEvents = this.getNewEvents();
         this.currentCards = this.getNewCards();
 
         let statChanges = this.applyNewEvents(newEvents);
+        statChanges.unshift(initialStats,0);
 
         this.currentYear+=1
         return {events:newEvents, cards:this.currentCards, stats:statChanges};
@@ -85,6 +89,11 @@ class GameManagerClass {
             this.pastEvents.push(event);
         }
         return statChanges
+    }
+    applyCard(card) {
+        for (let stat of Object.keys(card["effects"])) {
+
+        }
     }
     getNewCards() {
         let cards = [...this.cards];
