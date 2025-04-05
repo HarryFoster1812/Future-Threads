@@ -21,9 +21,12 @@ function weighted_random_choice(data) {
     }
     console.log('weighted random function broke', ran_val, data, total_weight);
 }
-function random_choice(arr){
-    // returns a random item from the given array
-    return arr[random_int(0,arr.length-1)];
+function clamp(value, min, max) {
+    // returns the value, limited to within the given min and max
+    if (min < max) {
+        return Math.min(Math.max(value,min),max);
+    }
+    return min;
 }
 
 class GameManagerClass {
@@ -41,17 +44,19 @@ class GameManagerClass {
 
         this.currentYear = 2025;
     }
-    selectCard() {
-
+    init() {
+        this.currentCards = this.getNewCards();
+        return {cards:this.currentCards, stats:this.stats}
     }
     incrementYear(selectedCard) {
+
         let newEvents = this.getNewEvents();
-        let newCards = this.getNewCards();
+        this.currentCards = this.getNewCards();
 
-
+        let statChanges = this.applyNewEvents(newEvents);
 
         this.currentYear+=1
-        return {events:newEvents, cards:newCards, stats:this.stats}
+        return {events:newEvents, cards:this.currentCards, stats:statChanges};
     }
     getNewEvents() {
         let possibleEvents = [];
@@ -67,6 +72,17 @@ class GameManagerClass {
             possibleEvents.splice(new_event_index, 1);
         }
         return selectedEvents
+    }
+    applyNewEvents(newEvents) {
+        let statChanges = [];
+        for (let event of newEvents) {
+            for (let stat of Object.keys(event["statEffects"])) {
+                let stat_change = event["statEffects"][stat]["change"]+random_range(-event["statEffects"][stat]["range"],event["statEffects"][stat]["range"])
+                this.stats[stat] = clamp(this.stats[stat]+stat_change,0,100);
+            }
+            statChanges.push({...this.stats});
+        }
+        return statChanges
     }
     getNewCards() {
         let cards = [...this.cards];
