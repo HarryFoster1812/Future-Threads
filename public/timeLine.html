@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Timeline - Student Hack 2025</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f4f4f4;
+    }
+
+    header, footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+
+    .timeline {
+        position: relative;
+        max-width: 80%; /* Relative width for responsiveness */
+        margin: 2rem auto;
+        padding: 1rem 0;
+    }
+
+    .timeline::after {
+        content: '';
+        position: absolute;
+        width: 0.5%; /* Relative width for the timeline line */
+        background-color: #333;
+        top: 0;
+        bottom: 0;
+        left: 50%; /* Center the timeline line */
+        transform: translateX(-50%);
+    }
+
+    .event {
+        padding: 2%; /* Relative padding for responsiveness */
+        position: relative;
+        background-color: inherit;
+        width: 45%; /* Relative width for events */
+    }
+
+    .event::after {
+        content: '';
+        position: absolute;
+        width: 5%; /* Relative size for the circle */
+        height: 5%;
+        background-color: white;
+        border: 0.5rem solid #FF9F55; /* Relative border size */
+        top: 15%; /* Relative positioning for the circle */
+        border-radius: 50%;
+        z-index: 1;
+    }
+
+    .event.left {
+        left: 0;
+    }
+
+    .event.right {
+        left: 50%;
+    }
+
+    .event.left::after {
+        right: -10%; /* Relative positioning for the circle on the left */
+    }
+
+    .event.right::after {
+        left: -10%; /* Relative positioning for the circle on the right */
+    }
+
+    .event-content {
+        padding: 5%; /* Relative padding for the content */
+        background-color: white;
+        border-radius: 6px;
+        box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.1); /* Relative shadow for responsiveness */
+    }
+
+    @media screen and (max-width: 600px) {
+        .timeline::after {
+            left: 5%; /* Adjust timeline line for smaller screens */
+        }
+        .event {
+            width: 90%; /* Full width for events on smaller screens */
+            padding-left: 10%; /* Adjust padding for smaller screens */
+            padding-right: 5%;
+        }
+        .event.right, .event.left {
+            left: 0; /* Align all events to the left */
+        }
+        .event::after {
+            left: 5%; /* Adjust circle position for smaller screens */
+        }
+    }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Student Hack 2025 Timeline</h1>
+</header>
+
+<div class="timeline" id="timeline"></div>
+
+<footer>
+  <p>&copy; 2025 Student Hack. All rights reserved.</p>
+</footer>
+<!-- Placeholder for additional content or features -->
+<div style="text-align: center; margin: 2rem;">
+    <button id="loadMoreButton" style="padding: 0.5rem 1rem; background-color: #FF9F55; color: white; border: none; border-radius: 4px; cursor: pointer;">
+        Load More Events
+    </button>
+</div>
+
+<script>
+    // Add functionality for the "Load More" button
+    const loadMoreButton = document.getElementById('loadMoreButton');
+
+    loadMoreButton.addEventListener('click', () => {
+        loadEvents();
+    });
+
+    // Hide the button when all events are loaded
+    function checkButtonVisibility() {
+        if (loadedEvents >= allEvents.length) {
+            loadMoreButton.style.display = 'none';
+        }
+    }
+
+    // Update button visibility after each load
+    const originalLoadEvents = loadEvents;
+    loadEvents = function () {
+        originalLoadEvents();
+        checkButtonVisibility();
+    };
+
+    // Initial button visibility check
+    checkButtonVisibility();
+</script>
+<script>
+  // Mock data source (simulate fetching from API or file)
+  const allEvents = Array.from({ length: 100 }, (_, i) => ({
+    title: `Event Title ${i + 1}`,
+    date: `2025-0${(i % 12) + 1}-01`,
+    image: i % 3 === 0 ? `https://via.placeholder.com/150?text=Event+${i + 1}` : null,
+    url: i % 4 === 0 ? `https://example.com/event-${i + 1}` : null,
+    
+    content: `Description for event ${i + 1}. Lorem ipsum dolor sit amet...`
+  }));
+
+  let loadedEvents = 0;
+  const eventsPerLoad = 6;
+  const timeline = document.getElementById('timeline');
+
+  function loadEvents() {
+    const fragment = document.createDocumentFragment();
+  
+    for (let i = loadedEvents; i < loadedEvents + eventsPerLoad && i < allEvents.length; i++) {
+      const event = allEvents[i];
+      const side = i % 2 === 0 ? 'left' : 'right';
+  
+      const div = document.createElement('div');
+      div.className = `event ${side}`;
+  
+      const imageHTML = event.image ? `<img src="${event.image}" alt="${event.title}" style="max-width: 100%; margin-bottom: 1rem;" />` : '';
+      const linkHTML = event.url ? `<p><a href="${event.url}" target="_blank" style="color: #FF9F55; text-decoration: underline;">Read more</a></p>` : '';
+  
+      div.innerHTML = `
+        <div class="event-content">
+          <h2>${event.title}</h2>
+          ${imageHTML}
+          <p>${event.content}</p>
+          ${linkHTML}
+          <small>${event.date}</small>
+        </div>
+      `;
+  
+      fragment.appendChild(div);
+    }
+  
+    timeline.appendChild(fragment);
+    loadedEvents += eventsPerLoad;
+  }
+  
+  // Infinite scroll
+  window.addEventListener('scroll', () => {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
+      loadEvents();
+    }
+  });
+
+  // Initial load
+  loadEvents();
+</script>
+
+</body>
+</html>
