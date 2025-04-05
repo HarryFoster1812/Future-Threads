@@ -117,6 +117,7 @@ data = [
     {"title": "Cure for Cancer",
      "description": "cure_for_cancer.jpg",
      "image": "",
+     "source":[],
      "optimism": [{"lowerBound": 0,
                   "upperBound": 1}],
      "dateRange": {"earliestYear": 2025,
@@ -137,7 +138,7 @@ data = [
      "isPositive": False,
      "tags": ["Environment"],
      },
-
+]
 
 """
     {"title": "",
@@ -153,7 +154,7 @@ data = [
      "tags": [],
      },
  """
-]
+
 
 
 def test_date_filter(optimism, entry):
