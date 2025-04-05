@@ -94,21 +94,16 @@ const FilterModal = ({
                             <input
                                 type="text"
                                 id="new-tag"
-                                className="border p-2 rounded-md flex-grow"
+                                className="border text-black p-2 rounded-md flex-grow"
                                 value={newTag}
                                 onChange={(e) => setNewTag(e.target.value)}
                                 placeholder="Add a new tag"
+                                disabled={tags.length >= MAX_TAGS }
                             />
-                            <button
-                                onClick={() => handleAddTag(newTag)}
-                                className="bg-blue-500 text-white p-2 rounded-md"
-                                disabled={tags.length >= MAX_TAGS || !newTag || tags.includes(newTag)}
-                            >
-                                Add
-                            </button>
+
                             {/* Display tag suggestions */}
                             {newTag && (
-                                <div className="absolute left-0 right-0 mt-1 bg-white border border-gray-300 rounded-md max-h-40 overflow-y-auto z-10">
+                                <div className="absolute left-0 right-0 mt-1 bg-white text-gray-900 border border-gray-300 rounded-md max-h-40 overflow-y-auto z-10">
                                     {filteredTags.map((tag, index) => (
                                         <div
                                             key={index}
