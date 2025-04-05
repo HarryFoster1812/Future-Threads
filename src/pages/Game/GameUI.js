@@ -3,7 +3,6 @@ import StatsBar from './components/statsBar';
 import EventDisplay from './components/eventDisplay';
 import CardsDeck from './components/cardsDeck';
 import RandomEventPopup from './components/randomEventPopup';
-import { gameEvents } from '../../data/gameEvents';
 
 function GameUI() {
   // Game state
@@ -19,10 +18,17 @@ function GameUI() {
   const [selectedCard, setSelectedCard] = useState(null);
   const [randomEvent, setRandomEvent] = useState(null);
   const [eventsHappened, setEventsHappened] = useState([]);
+  const [gameEvents, setEventsHappened] = useState([]);
+
+    useEffect(()=>{
+
+    }, [])
 
   const handleCardClick = (card) => {
     setSelectedCard(card);
     
+    const return = axios("http://localhost:5000/api/incYear", {selectedCard: card});
+    console.log(return)
     // Animate stat changes after delay
     setTimeout(() => {
       setStats(prev => {
@@ -37,7 +43,7 @@ function GameUI() {
       setTimeout(() => {
         setRandomEvent("Citizens react to your decision!");
         // Load next random event
-        setCurrentEvent(gameEvents[Math.floor(Math.random() * gameEvents.length)]);
+        setCurrentEvent();
         setEventsHappened((prev) => [...prev, currentEvent]);
         setSelectedCard(null);
       }, 1000);
