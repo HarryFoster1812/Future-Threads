@@ -51,9 +51,9 @@ const getChoices = async () => {
     try {
         const fileData = await fs.readFile('../public/timeline_data/choices.json', 'utf8');
         choiceData = JSON.parse(fileData);
-        console.log('Timeline data loaded successfully.');
+        console.log('Choices data loaded successfully.');
     } catch (err) {
-        console.error('Error loading timeline data:', err);
+        console.error('Error loading Choices data:', err);
         return null;
     }
 }
