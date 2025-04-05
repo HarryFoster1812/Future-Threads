@@ -1,0 +1,161 @@
+[
+  {
+    "title": "Mars Colony",
+    "description": "The first permanent human settlement on Mars is likely to begin as a small base, gradually expanding into a self-sustaining colony.",
+    "image": "mars_colony.jpg",
+    "source": [],
+    "optimism": [
+      {
+        "lowerBound": 0.6,
+        "upperBound": 1
+      }
+    ],
+    "dateRange": {
+      "earliestYear": 2030,
+      "latestYear": 2060
+    },
+    "relevance": 0.6,
+    "isPositive": true,
+    "tags": [
+      "Space",
+      "Science"
+    ]
+  },
+  {
+    "title": "Humans return to the Moon",
+    "description": "For the first time since 1972, humans will set foot on the Moon as part of NASA\u2019s Artemis III mission.",
+    "image": "return_to_moon.jpg",
+    "source": [],
+    "optimism": [
+      {
+        "lowerBound": 0.3,
+        "upperBound": 1
+      }
+    ],
+    "dateRange": {
+      "earliestYear": 2026,
+      "latestYear": 2028
+    },
+    "relevance": 0.55,
+    "isPositive": true,
+    "tags": [
+      "Space",
+      "Science"
+    ]
+  },
+  {
+    "title": "Moon Colony",
+    "description": "The Moon is expected to host permanent or semi-permanent bases in the 2030s. These early colonies will serve as research stations, testing grounds for Mars missions, and even potential commercial hubs",
+    "image": "moon_colony.jpg",
+    "source": [],
+    "optimism": [
+      {
+        "lowerBound": 0.65,
+        "upperBound": 1
+      }
+    ],
+    "dateRange": {
+      "earliestYear": 2030,
+      "latestYear": 2050
+    },
+    "relevance": 0.6,
+    "isPositive": true,
+    "tags": [
+      "Space",
+      "Science"
+    ]
+  },
+  {
+    "title": "First AGI",
+    "description": "AGI refers to a type of artificial intelligence capable of performing any intellectual task that a human can do, with the ability to learn, adapt, and generalize across a wide range of activities.",
+    "image": "first_AGI.png",
+    "source": [],
+    "optimism": [
+      {
+        "lowerBound": 0,
+        "upperBound": 0.25
+      },
+      {
+        "lowerBound": 0.7,
+        "upperBound": 1
+      }
+    ],
+    "dateRange": {
+      "earliestYear": 2027,
+      "latestYear": 2060
+    },
+    "relevance": 0.75,
+    "isPositive": true,
+    "tags": [
+      "Science",
+      "AI"
+    ]
+  },
+  {
+    "title": "Commercially Viable Fusion Power",
+    "description": "Fusion power is the holy grail for clean and virtually limitless energy. In fusion light atomic nuclei like hydrogen combine, forming heavier nuclei and releasing immense energy.",
+    "image": "fusion_energy.jpg",
+    "source": [
+      "https://en.wikipedia.org/wiki/Commercial_fusion#:~:text=The%20advent%20of%20commercial%20fusion,to%20the%20grid%20before%202035."
+    ],
+    "optimism": [
+      {
+        "lowerBound": 0.6,
+        "upperBound": 1
+      }
+    ],
+    "dateRange": {
+      "earliestYear": 2032,
+      "latestYear": 2050
+    },
+    "relevance": 0.85,
+    "isPositive": true,
+    "tags": [
+      "Science"
+    ]
+  },
+  {
+    "title": "Cure for Cancer",
+    "description": "cure_for_cancer.jpg",
+    "image": "",
+    "optimism": [
+      {
+        "lowerBound": 0,
+        "upperBound": 1
+      }
+    ],
+    "dateRange": {
+      "earliestYear": 2025,
+      "latestYear": 2050
+    },
+    "relevance": 0.75,
+    "isPositive": true,
+    "tags": [
+      "Medicine",
+      "Science"
+    ]
+  },
+  {
+    "title": "Exceed 2\u00b0C",
+    "description": "Crossing the 2\u00b0C threshold above pre-industrial levels marks a dangerous point in climate change. This level of warming could lead to some irreversible impacts to the planet.",
+    "image": "2_degrees.png",
+    "source": [
+      "https://www.carbonbrief.org/analysis-when-might-the-world-exceed-1-5c-and-2c-of-global-warming/#:~:text=Similarly%2C%20if%20future%20emissions%20remain,between%20the%202030s%20and%202050s"
+    ],
+    "optimism": [
+      {
+        "lowerBound": 0,
+        "upperBound": 0.7
+      }
+    ],
+    "dateRange": {
+      "earliestYear": 2030,
+      "latestYear": 2070
+    },
+    "relevance": 0.7,
+    "isPositive": false,
+    "tags": [
+      "Environment"
+    ]
+  }
+]
