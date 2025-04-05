@@ -1,5 +1,5 @@
 import express from "express";
-import http from "http";
+import cors from 'cors';
 
 import { getDB } from "./database.js";
 
@@ -16,8 +16,6 @@ const corsOptions = {
     "Content-Type,cache-control,user-agent,Origin, X-Requested-With, Accept",
 };
 
-const server = http.createServer(app);
-
 const FRONTEND_URL = "http://localhost:3000";
 // Changed port to 3001. 3000 is taken up by react.
 const port = 3001;
@@ -25,7 +23,7 @@ const port = 3001;
 const db = getDB();
 
 app.use(express.urlencoded({ extended: true }));
-
+app.use(cors(corsOptions))
 
 app.get("/", (req, res) => {
   console.log("request sent to root");
@@ -34,6 +32,6 @@ app.get("/", (req, res) => {
   );
 });
 
-server.listen(port, () => {
+app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });

@@ -15,12 +15,12 @@ export function initializeDB() {
 	db = new Database(DB_PATH);
 	console.log("DB initialization");
 
-	runFromSQLFile(db, "schema.sql");
+	//runFromSQLFile(db, "schema.sql");
 
 	if (!db_PreExisting) {
 		console.log("Writing initialization data to DB")
 
-		runFromSQLFile(db, "data_initialize.sql");
+		//runFromSQLFile(db, "data_initialize.sql");
 	}
 }
 
