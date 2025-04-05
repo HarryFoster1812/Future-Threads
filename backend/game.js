@@ -5,26 +5,27 @@ function random_range(min,max) {
     return ran*(max-min)+min;
 }
 function weighted_random_choice(data) {
-    // takes data in the form {['item1',2], ['item2',1], ['item3',4]}
-    // returns one of the keys e.g. 'item1' with its weighted probability, for item 1 being 2/7
+    // takes data in the form [['item1',2], ['item2',1], ['item3',4]]
+    // returns the index   //not ->// returns one of the keys e.g. 'item1' with its weighted probability, for item 1 being 2/7
 
     let total_weight = 0;
-    for (let weight of Object.values(data)) {
-        total_weight += weight;
+    for (let info of data) {
+        total_weight += info[1];
     }
     let ran_val = random_range(0, total_weight);
-    for (let item of Object.keys(data)) {
-        ran_val -= data[item];
+    for (let i=0;i<data.length;i++) {
+        ran_val -= data[i][1];
         if (ran_val < 0) {
-            return item;
+            return data[i][0];
         }
     }
     console.log('weighted random function broke', ran_val, data, total_weight);
 }
 
 class GameManagerClass {
-    constructor(events) {
+    constructor(events, cards) {
         this.events = events;
+        this.cards = cards;
         this.past_events = {};
         this.stats = {
             economy: 50,
@@ -36,22 +37,34 @@ class GameManagerClass {
 
         this.currentYear = 2025;
     }
-    generateCards() {
-
-    }
     selectCard() {
 
     }
-    incrementYear() {
-        // returns new events
-        let possibleEvents = {};
-        for (let events of this.events) {
-            possibleEvents[]
-        }
+    incrementYear(selectedCard) {
+        let newEvents = this.getNewEvents();
+        let newCards = this.getNewCards();
 
 
 
         this.currentYear+=1
+    }
+    getNewEvents() {
+        let possibleEvents = [];
+        for (let event of this.events) {
+            possibleEvents.push([event, this.getEventProbability(event)])
+        }
+        let selectedEvents = [];
+        let i = 0;
+        let max_events = random_range(2,4);
+        while (i<max_events && possibleEvents.length>0) {
+            let new_event_index = weighted_random_choice(possibleEvents);
+            selectedEvents.push(possibleEvents[new_event_index]);
+            possibleEvents.splice(new_event_index, 1);
+        }
+        return selectedEvents
+    }
+    getNewCards() {
+
     }
     getStats() {
         return this.stats
