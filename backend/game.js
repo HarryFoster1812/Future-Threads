@@ -6,6 +6,11 @@ function random_range(min,max) {
 }
 function random_int(min,max) {
     // picks a random int in the range, inclusive
+    if (max > min) {
+        let temp = max;
+        max = min;
+        min = temp;
+    }
     let ran = Math.random();
     return Math.floor(ran*(max-min+1)+min);
 }
@@ -107,6 +112,11 @@ class GameManagerClass {
             let index = random_int(0, this.cards.length - 1);
             selectedCards.push(this.cards[index]);
             cards.splice(index, 1)
+        }
+        for (let card of cards) {
+            for (let stat of Object.keys(card.effects)) {
+                card[stat] = random_int(card[stat][0],card[stat][1]);
+            }
         }
         return selectedCards
     }
