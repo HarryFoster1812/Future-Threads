@@ -1,0 +1,34 @@
+default:
+  image: node:latest
+
+stages:
+- lint
+- build
+
+build-frontend-job:
+  stage: build
+  script:
+    - cd frontend
+    - npm i
+    - npm run build
+
+lint-frontend-job:
+  stage: lint
+  script:
+    - cd frontend
+    - npm i
+    - npm run lint-nofix
+
+build-backend-job:
+  stage: build
+  script:
+    - cd backend
+    - npm i
+    - npm run build
+
+lint-backend-job:
+  stage: lint
+  script:
+    - cd backend
+    - npm i
+    - npm run lint-nofix
