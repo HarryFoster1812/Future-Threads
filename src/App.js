@@ -49,7 +49,7 @@ const App = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const result = await getJson(0, ["Science"], 0.5);
+            const result = await getJson(0, ["Science"], 0.6);
             setAllEvents(result);
             setEvents(result.slice(0, eventsPerLoad));
             setLoadedEvents(eventsPerLoad);
