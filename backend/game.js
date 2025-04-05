@@ -4,6 +4,11 @@ function random_range(min,max) {
     let ran = Math.random();
     return ran*(max-min)+min;
 }
+function random_int(min,max) {
+    // picks a random int in the range, inclusive
+    let ran = Math.random();
+    return Math.floor(ran*(max-min+1)+min);
+}
 function weighted_random_choice(data) {
     // takes data in the form [['item1',2], ['item2',1], ['item3',4]]
     // returns the index   //not ->// returns one of the keys e.g. 'item1' with its weighted probability, for item 1 being 2/7
@@ -70,7 +75,7 @@ class GameManagerClass {
         }
         let selectedEvents = [];
         let i = 0;
-        let max_events = random_range(2,4);
+        let max_events = random_int(2,4);
         while (i<max_events && possibleEvents.length>0) {
             let new_event_index = weighted_random_choice(possibleEvents);
             selectedEvents.push(possibleEvents[new_event_index]);
@@ -82,7 +87,7 @@ class GameManagerClass {
         let statChanges = [];
         for (let event of newEvents) {
             for (let stat of Object.keys(event["statEffects"])) {
-                let stat_change = event["statEffects"][stat]["change"]+random_range(-event["statEffects"][stat]["range"],event["statEffects"][stat]["range"])
+                let stat_change = event["statEffects"][stat]["change"]+random_int(-event["statEffects"][stat]["range"],event["statEffects"][stat]["range"])
                 this.stats[stat] = clamp(this.stats[stat]+stat_change,0,100);
             }
             statChanges.push({...this.stats});
@@ -99,12 +104,10 @@ class GameManagerClass {
         let cards = [...this.cards];
         let selectedCards = [];
         for (let i=0;i<3;i++) {
-            let index = random_range(0, this.cards.length - 1);
+            let index = random_int(0, this.cards.length - 1);
             selectedCards.push(this.cards[index]);
-            console.log('pushing',index,this.cards,this.cards[index]);
             cards.splice(index, 1)
         }
-        console.log('selected cards',selectedCards);
         return selectedCards
     }
     getGameStat() {
