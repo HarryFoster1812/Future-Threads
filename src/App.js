@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
 import NoPage from "./pages/NoPage/NoPage";
 import GameUI from "./pages/Game/GameUI";
+import TimeLine from "./pages/TimeLine/TimeLine";
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
                     <Route path="event/:info" element={<Event/>}/>
+                    <Route path="timeline" element={<TimeLine/>}/>
                     <Route path="game" element={<GameUI />} />
                     <Route path="*" element={<NoPage />} />
                 </Route>
