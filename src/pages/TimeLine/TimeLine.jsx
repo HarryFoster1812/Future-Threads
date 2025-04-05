@@ -43,7 +43,7 @@ const getJson = (relevanceMinimum, tags, optimism) => {
         })
 }
 
-const Home = () => {
+const TimeLine = () => {
     const [events, setEvents] = useState([]);
     const [loadedEvents, setLoadedEvents] = useState(0);
     const [allEvents, setAllEvents] = useState([]);
@@ -101,4 +101,4 @@ const Home = () => {
 
 }
 
-export default Home;
+export default TimeLine;
