@@ -42,7 +42,7 @@ class GameManagerClass {
         this.currentYear = 2025;
     }
     selectCard() {
-
+        
     }
     incrementYear(selectedCard) {
         let newEvents = this.getNewEvents();

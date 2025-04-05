@@ -40,8 +40,6 @@ const getEvents = async () => {
     try {
         let fileData = await fs.readFile('../public/timeline_data/timeline_data.json', 'utf8');
         eventData = JSON.parse(fileData);
-         fileData = await fs.readFile('../public/timeline_data/choices.json', 'utf8');
-        cardData = JSON.parse(fileData);
         console.log('Timeline data loaded successfully.');
     } catch (err) {
         console.error('Error loading timeline data:', err);
@@ -116,21 +114,16 @@ app.use(
 
 
 
-getJsons().then(() => {
-    app.listen(PORT, () => {
-        console.log(`Server is running on port ${PORT}`);
-    })
-    gameManager = new GameManagerClass(eventData, cardData);
 app.post('/api/incYear', async (req, res) => {
     req.session.gameManager.incrementYear();
 });
 
 app.post('/api/getGameState', async (req, res) => {
+
 });
 
 app.post('/api/newGame', async (req, res) =>{
     req.session.gameManager = new GameManagerClass(eventData, choiceData);
-
 });
 
 
