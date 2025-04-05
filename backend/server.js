@@ -6,6 +6,7 @@ const path = require('path');
 const fs = require('fs').promises;
 
 const { GoogleGenerativeAI } = require("@google/generative-ai");
+const getAudioPath = require("./voiceGen")
 
 dotenv.config();
 
@@ -88,5 +89,13 @@ getJson().then(() => {
     app.listen(PORT, () => {
         console.log(`Server is running on port ${PORT}`);
     });
+
+app.get("/api/voice/:title", async (req, res) => {
+    const audioPath = await getAudioPath(req.params.title)
+    res.sendFile(audioPath)
+  })
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
 
