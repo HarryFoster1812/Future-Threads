@@ -1,0 +1,19 @@
+import { Outlet, Link } from "react-router-dom";
+
+const Layout = () => {
+<<<<<<< HEAD
+    return (
+        <>
+            <Outlet />
+        </>
+    )
+=======
+  return (
+    <>
+      <Outlet />
+    </>
+  )
+>>>>>>> Game_UI
+};
+
+export default Layout;

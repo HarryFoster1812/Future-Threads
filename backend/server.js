@@ -21,12 +21,7 @@ app.use(express.json());
 app.use(cors());
 
 let eventData = null;
-<<<<<<< HEAD
-let cardData = null;
-let gameManager = null;
-=======
 let choiceData = null;
->>>>>>> stash
 
 // Set up session middleware
 app.use(
@@ -41,11 +36,7 @@ app.use(
   })
 );
 
-<<<<<<< HEAD
-const getJsons = async () => {
-=======
 const getEvents = async () => {
->>>>>>> stash
     try {
         let fileData = await fs.readFile('../public/timeline_data/timeline_data.json', 'utf8');
         eventData = JSON.parse(fileData);
