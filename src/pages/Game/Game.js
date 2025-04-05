@@ -15,7 +15,20 @@ export default function Game() {
         economy: 50,
     });
 
-    const [currentEvent, setCurrentEvent] = useState(gameEvents[0]);
+    const handleSendMessage = async () => {
+        try {
+            const response = await axios.post('http://localhost:5000/api/filteredEvents');
+            console.log(response);
+        } catch (error) {
+            console.log(error)
+        }
+    };
+
+    useEffect(()=>{
+    
+    })
+
+    const [currentEvent, setCurrentEvent] = useState();
     const [selectedCard, setSelectedCard] = useState(null);
     const [randomEvent, setRandomEvent] = useState(null);
 

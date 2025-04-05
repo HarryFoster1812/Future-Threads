@@ -115,6 +115,7 @@ app.use(
 
 
 app.post('/api/incYear', async (req, res) => {
+   console.log(req) 
     req.session.gameManager.incrementYear();
 });
 
@@ -124,6 +125,7 @@ app.post('/api/getGameState', async (req, res) => {
 
 app.post('/api/newGame', async (req, res) =>{
     req.session.gameManager = new GameManagerClass(eventData, choiceData);
+    res.json({ content: req.session.gameManager.init() });
 });
 
 
