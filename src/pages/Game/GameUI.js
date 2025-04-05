@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import StatsBar from './components/statsBar';
 import EventDisplay from './components/eventDisplay';
 import CardsDeck from './components/cardsDeck';
 import RandomEventPopup from './components/randomEventPopup';
+import axios from "axios";
 
 function GameUI() {
   // Game state
@@ -14,21 +15,23 @@ function GameUI() {
     economy: 50,
   });
 
-  const [currentEvent, setCurrentEvent] = useState(gameEvents[0]);
-  const [selectedCard, setSelectedCard] = useState(null);
-  const [randomEvent, setRandomEvent] = useState(null);
+  const [currentEvent, setCurrentEvent] = useState();
+  const [selectedCard, setSelectedCard] = useState({});
   const [eventsHappened, setEventsHappened] = useState([]);
-  const [gameEvents, setEventsHappened] = useState([]);
 
-    useEffect(()=>{
-
+    useEffect(async()=> {
+      const initData = await axios.post('http://localhost:5000/api/newGame');
+        console.log("INIT DATA:", initData);
+        setCurrentEvent(initData.data.content.cards);
+        setStats(initData.data.content.stats);
+        
     }, [])
 
   const handleCardClick = (card) => {
     setSelectedCard(card);
     
-    const return = axios("http://localhost:5000/api/incYear", {selectedCard: card});
-    console.log(return)
+    const returnJson = axios("http://localhost:5000/api/incYear", {selectedCard: card});
+    console.log(returnJson)
     // Animate stat changes after delay
     setTimeout(() => {
       setStats(prev => {
@@ -39,34 +42,32 @@ function GameUI() {
         return newStats;
       });
 
-      // Trigger random event
-      setTimeout(() => {
-        setRandomEvent("Citizens react to your decision!");
-        // Load next random event
-        setCurrentEvent();
-        setEventsHappened((prev) => [...prev, currentEvent]);
-        setSelectedCard(null);
-      }, 1000);
+        //setCurrentEvent();
+        //setEventsHappened((prev) => [...prev, currentEvent]);
+        //setSelectedCard(null);
     }, 500);
   };
+    console.log("CURRENT EVENT:", currentEvent)
 
   return (
     <div className="game-container">
       <StatsBar stats={stats} />
       <EventDisplay eventsOccured={eventsHappened} />
       
-      {!randomEvent ? (
+      {currentEvent && (
         <CardsDeck 
           cards={currentEvent.cards} 
           onCardClick={handleCardClick} 
           selectedCardId={selectedCard?.id} 
         />
-      ) : (
+      )}
+
+        {/* : (
         <RandomEventPopup 
           event={randomEvent} 
           onClose={() => setRandomEvent(null)} 
         />
-      )}
+      )*/}
     </div>
   );
 }
