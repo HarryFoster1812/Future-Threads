@@ -21,10 +21,22 @@ app.use(express.json());
 app.use(cors());
 
 let eventData = null;
-let gameManager = null;
+let choiceData = null;
 
+// Set up session middleware
+app.use(
+  session({
+    secret: 'your-secret-key', // Replace with a secure key for your app
+    resave: false,             // Avoid saving session if unmodified
+    saveUninitialized: true,   // Save session for new users
+    cookie: {
+      secure: false,           // Set to `true` if using HTTPS
+      maxAge: 1000 * 60 * 60   // Set session expiration (1 hour)
+    }
+  })
+);
 
-const getJson = async () => {
+const getEvents = async () => {
     try {
         const fileData = await fs.readFile('../public/timeline_data/timeline_data.json', 'utf8');
         eventData = JSON.parse(fileData);
@@ -35,7 +47,20 @@ const getJson = async () => {
     }
 };
 
+const getChoices = async () => {
+    try {
+        const fileData = await fs.readFile('../public/timeline_data/choices.json', 'utf8');
+        choiceData = JSON.parse(fileData);
+        console.log('Timeline data loaded successfully.');
+    } catch (err) {
+        console.error('Error loading timeline data:', err);
+        return null;
+    }
+}
+
+
 function addEventItem(event){
+    
 
 }
 
@@ -46,6 +71,8 @@ function addChoiceCardItem(choice){
 app.post('/api/filteredEvents', async (req, res) =>{
 
 })
+
+// GEMINI API CALLS
 
 app.post('/api/chat', async (req, res) => {
     const { message } = req.body;
@@ -70,35 +97,35 @@ app.post('/api/chat', async (req, res) => {
     }
 });
 
+// GAME API CALLS
 
-// Set up session middleware
-app.use(
-  session({
-    secret: 'your-secret-key', // Replace with a secure key for your app
-    resave: false,             // Avoid saving session if unmodified
-    saveUninitialized: true,   // Save session for new users
-    cookie: {
-      secure: false,           // Set to `true` if using HTTPS
-      maxAge: 1000 * 60 * 60   // Set session expiration (1 hour)
-    }
-  })
-);
-
-
-
-getJson().then(() => {
-    app.listen(PORT, () => {
-        console.log(`Server is running on port ${PORT}`);
-    })
-    gameManager = new GameManagerClass(eventData);
+app.post('/api/incYear', async (req, res) => {
+    req.session.gameManager.incrementYear();
 });
+
+app.post('/api/getGameState', async (req, res) => {
+});
+
+app.post('/api/newGame', async (req, res) =>{
+    req.session.gameManager = new GameManagerClass(eventData, choiceData);
+
+});
+
 
 app.get("/api/voice/:title", async (req, res) => {
     const audioPath = await getAudioPath(req.params.title)
     res.sendFile(audioPath)
   });
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+
+
+
+getEvents().then(() => {
+    getChoices().then(()=> {
+        app.listen(PORT, () => {
+            console.log(`Server is running on port ${PORT}`);
+        });
+    });
 });
+
 
