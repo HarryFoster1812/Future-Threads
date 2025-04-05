@@ -70,14 +70,14 @@ const TimeLine = () => {
         setLoadedEvents(loadedEvents + eventsPerLoad);
 
         console.log(allEvents.length);
-        if(loadedEvents >= allEvents.length && allEvents.length != 0){
+        if(loadedEvents >= allEvents.length && allEvents.length !== 0){
             setShowMoreButton(false);
         }
     };
 
     useEffect(() => {
         loadEvents();
-    }, []);
+    });
 
 
     return (

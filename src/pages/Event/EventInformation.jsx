@@ -31,7 +31,7 @@ const EventInformation = () => {
   // Call the function when the component mounts or when 'info' changes
   useEffect(() => {
     handleSendMessage();
-  }, []);
+  });
 
   return (
     <div className="text-white p-4 text-center">
