@@ -33,7 +33,7 @@ class GameManagerClass {
     constructor(events, cards) {
         this.events = events;
         this.cards = cards;
-        this.past_events = {};
+        this.pastEvents = [];
         this.stats = {
             economy: 50,
             environment: 50,
@@ -58,6 +58,7 @@ class GameManagerClass {
         this.currentYear+=1
         return {events:newEvents, cards:this.currentCards, stats:statChanges};
     }
+    // all past events, current stats, current cards
     getNewEvents() {
         let possibleEvents = [];
         for (let event of this.events) {
@@ -81,6 +82,7 @@ class GameManagerClass {
                 this.stats[stat] = clamp(this.stats[stat]+stat_change,0,100);
             }
             statChanges.push({...this.stats});
+            this.pastEvents.push(event);
         }
         return statChanges
     }
@@ -94,8 +96,8 @@ class GameManagerClass {
         }
         return selectedCards
     }
-    getStats() {
-        return this.stats
+    getGameStat() {
+        return {stats:this.stats, currentCards: this.currentCards, pastEvents: this.pastEvents}
     }
 
     getEventProbability(event) {
