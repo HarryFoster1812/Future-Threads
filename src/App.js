@@ -3,6 +3,7 @@ import Home from './pages/Home/Home'
 import Event from './pages/Event/EventInformation'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
+import Test from "./pages/apiTest/test";
 import NoPage from "./pages/NoPage/NoPage";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
                     <Route path="event/:info" element={<Event/>}/>
+                    <Route path="test" element={<Test/>}/>
                     <Route path="*" element={<NoPage />} />
                 </Route>
             </Routes>
