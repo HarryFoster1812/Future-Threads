@@ -1,9 +1,11 @@
-import './App.css';
-import Filter from './home/filter.jsx';
-import React, { useState, useEffect } from 'react';
-import Event from './timeline/Event';
-import LoadMoreButton from './timeline/LoadMoreButton';
+import './App.css' 
+import Home from './pages/Home/Home'
+import Event from './pages/Event/EventInformation'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./pages/Layout";
+import NoPage from "./pages/NoPage/NoPage";
 
+<<<<<<< HEAD
 const getEntryDate = (entry, optimism) => {
     for (let optimismRange of entry["optimism"]) {
         if (optimismRange["lowerBound"] <= optimism && optimism <= optimismRange["upperBound"]) {
@@ -71,25 +73,22 @@ const App = () => {
     useEffect(() => {
         loadEvents();
     }, []);
+=======
+function App() {
+>>>>>>> dynamicPage
 
     return (
-        <div className="flex items-center justify-center flex-col bg-black p-4">
-            <Filter/>
-
-            {/* Timeline Container */}
-            <div className="relative w-full md:w-2/3">
-                {/* Vertical Timeline Line */}
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 bg-gray-300 h-full z-0"></div>
-
-                {events.map((event, index) => (
-                    <Event key={index} event={event} side={index % 2 === 0 ? 'left' : 'right'} />
-                ))}
-            </div>
-
-            <LoadMoreButton onClick={loadEvents} />
-
-        </div>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Layout />}>
+                    <Route index element={<Home />} />
+                    <Route path="event/:info" element={<Event/>}/>
+                    <Route path="*" element={<NoPage />} />
+                </Route>
+            </Routes>
+        </BrowserRouter>
     );
-}
 
-export default App;
+}
+export default App
+
