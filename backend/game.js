@@ -1,8 +1,8 @@
 
-function random_range(min,max) {
+function random_range(val1,val2) {
     // picks a random float in the range, inclusive
     let ran = Math.random();
-    return ran*(max-min)+min;
+    return ran*(Math.max(val1, val2)-Math.min(val1, val2))+Math.min(val1, val2);
 }
 function weighted_random_choice(data) {
     // takes data in the form [['item1',2], ['item2',1], ['item3',4]]
@@ -23,7 +23,7 @@ function weighted_random_choice(data) {
 }
 function random_choice(arr){
     // returns a random item from the given array
-    return arr[random_int(0,arr.length-1)];
+    return arr[random_range(0,arr.length-1)];
 }
 
 class GameManagerClass {
