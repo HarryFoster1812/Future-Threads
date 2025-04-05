@@ -42,7 +42,7 @@ class GameManagerClass {
         this.currentYear = 2025;
     }
     selectCard() {
-        
+
     }
     incrementYear(selectedCard) {
         let newEvents = this.getNewEvents();
@@ -51,7 +51,7 @@ class GameManagerClass {
 
 
         this.currentYear+=1
-        return {events:newEvents, cards:newCards}
+        return {events:newEvents, cards:newCards, stats:this.stats}
     }
     getNewEvents() {
         let possibleEvents = [];
