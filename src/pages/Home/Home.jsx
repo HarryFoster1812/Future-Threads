@@ -47,7 +47,9 @@ const Home = () => {
     const [events, setEvents] = useState([]);
     const [loadedEvents, setLoadedEvents] = useState(0);
     const [allEvents, setAllEvents] = useState([]);
+    const [showMoreButton, setShowMoreButton] = useState(true);
     const eventsPerLoad = 3;
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -66,6 +68,11 @@ const Home = () => {
             ...allEvents.slice(loadedEvents, loadedEvents + eventsPerLoad),
         ]);
         setLoadedEvents(loadedEvents + eventsPerLoad);
+
+        console.log(allEvents.length);
+        if(loadedEvents >= allEvents.length && allEvents.length != 0){
+            setShowMoreButton(false);
+        }
     };
 
     useEffect(() => {
@@ -87,7 +94,7 @@ const Home = () => {
                 ))}
             </div>
 
-            <LoadMoreButton onClick={loadEvents} />
+            {showMoreButton && <LoadMoreButton onClick={loadEvents} />}
 
         </div>
     );
