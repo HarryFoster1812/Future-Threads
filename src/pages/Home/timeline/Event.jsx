@@ -27,3 +27,4 @@ const Event = ({ event, side }) => {
 
 export default Event;
 
+
