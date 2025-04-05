@@ -21,6 +21,10 @@ function weighted_random_choice(data) {
     }
     console.log('weighted random function broke', ran_val, data, total_weight);
 }
+function random_choice(arr){
+    // returns a random item from the given array
+    return arr[random_int(0,arr.length-1)];
+}
 
 class GameManagerClass {
     constructor(events, cards) {
@@ -47,6 +51,7 @@ class GameManagerClass {
 
 
         this.currentYear+=1
+        return {events:newEvents, cards:newCards}
     }
     getNewEvents() {
         let possibleEvents = [];
@@ -64,7 +69,14 @@ class GameManagerClass {
         return selectedEvents
     }
     getNewCards() {
-
+        let cards = [...this.cards];
+        let selectedCards = [];
+        for (let i=0;i<3;i++) {
+            let index = random_range(0,this.cards.length-1);
+            selectedCards.push(this.cards[index]);
+            cards.splice(index, 1)
+        }
+        return selectedCards
     }
     getStats() {
         return this.stats
