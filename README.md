@@ -46,7 +46,7 @@ Despite the challenges, we managed to push through and finish in **4th place**, 
 
 - **Hack the Future** (Main Theme): The core of our project revolved around predicting and simulating the future, showing the impact of political decisions and events on society.
 - **2080 Challenge** (Optional): Although not fully integrated, we aimed to project potential future events for humanity, exploring how decisions made today can lead to outcomes by 2080.
-- **Text-to-Speech Challenge** (Optional): This challenge was not directly implemented, but there were plans to incorporate accessibility features, such as text-to-speech, to make the game more inclusive.
+- **Text-to-Speech Challenge** (Optional): This challenge was not directly focused on, but we did incorporate accessibility features, such as text-to-speech.
 
 ---
 
