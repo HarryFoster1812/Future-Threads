@@ -1407,7 +1407,128 @@ data = [
     },
     "eventRequirements": [],
     "cardRequirements": [],
+  },
+    {
+    "title": "Complete Economic Collapse",
+    "description": "Everyone runs out of money, the world falls apart, everyone dies.",
+    "image": "economic_collapse.jpg",
+    "source": "",
+    "dateRange": {
+      "earliestYear": 2027,
+      "latestYear": 2040
+    },
+    "isPositive": False,
+    "gameEnds":True,
+    "tags": ["Politics"],
+    "baseProbability": 1000,
+    "statRanges": {
+      "economy": {
+        "min": 0,
+        "max": 1,
+        "probabilitySwing": 0
+      },
+    },
+    "statEffects": {},
+    "eventRequirements": [],
+    "cardRequirements": [],
+  },
+{
+    "title": "Complete Environmental Collapse",
+    "description": "Climate change creates storms so violent all man made structures are destroid, taking the humans inside with them.",
+    "image": "environmental_collapse.jpg",
+    "source": "",
+    "dateRange": {
+      "earliestYear": 2027,
+      "latestYear": 2040
+    },
+    "isPositive": False,
+    "gameEnds":True,
+    "tags": ["Politics"],
+    "baseProbability": 1000,
+    "statRanges": {
+      "environment": {
+        "min": 0,
+        "max": 1,
+        "probabilitySwing": 0
+      },
+    },
+    "statEffects": {},
+    "eventRequirements": [],
+    "cardRequirements": [],
+  },
+{
+    "title": "Complete Military Collapse",
+    "description": "Humanity loses all its military and therefore its ability to defend itself, the pigeons use their limited, yet surprisingly powerful military skills to wipe out humanity.",
+    "image": "military_collapse.jpg",
+    "source": "",
+    "dateRange": {
+      "earliestYear": 2027,
+      "latestYear": 2040
+    },
+    "gameEnds":True,
+    "isPositive": False,
+    "tags": ["Politics"],
+    "baseProbability": 1000,
+    "statRanges": {
+      "military": {
+        "min": 0,
+        "max": 1,
+        "probabilitySwing": 0
+      },
+    },
+    "statEffects": {},
+    "eventRequirements": [],
+    "cardRequirements": [],
+  },
+{
+    "title": "Complete Loss of Quality of Life",
+    "description": "Literally everyone is severely depressed and lacking purpose or meaning, a pandemic of suicide wipes out humanity",
+    "image": "quality_of_life_collapse.jpg",
+    "source": "",
+    "dateRange": {
+      "earliestYear": 2027,
+      "latestYear": 2040
+    },
+    "isPositive": False,
+    "gameEnds":True,
+    "tags": ["Politics"],
+    "baseProbability": 1000,
+    "statRanges": {
+      "qualityOfLife": {
+        "min": 0,
+        "max": 1,
+        "probabilitySwing": 0
+      },
+    },
+    "statEffects": {},
+    "eventRequirements": [],
+    "cardRequirements": [],
+  },
+{
+    "title": "Complete Political Collapse",
+    "description": "Governments lose control of their people, everyone kills each other.",
+    "image": "economic_collapse.jpg",
+    "source": "",
+    "dateRange": {
+      "earliestYear": 2027,
+      "latestYear": 2040
+    },
+    "isPositive": False,
+    "gameEnds":True,
+    "tags": ["Politics"],
+    "baseProbability": 1000,
+    "statRanges": {
+      "politics": {
+        "min": 0,
+        "max": 1,
+        "probabilitySwing": 0
+      },
+    },
+    "statEffects": {},
+    "eventRequirements": [],
+    "cardRequirements": [],
   }
+
 ]
 
 
