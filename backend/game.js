@@ -113,7 +113,7 @@ class GameManagerClass {
     }
     applyCard(card) {
         for (let stat of Object.keys(card["effects"])) {
-
+            this.stats[stat] = clamp(this.stats[stat]+card["effects"][stat],0,100);
         }
     }
     getNewCards() {
