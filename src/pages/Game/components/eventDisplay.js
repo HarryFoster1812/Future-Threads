@@ -3,7 +3,6 @@ import React, {useEffect, useRef} from  "react";
 import EventWithText from './EventWithText';
 
 const EventDisplay = ({eventsOccured})=> {
-    console.log(eventsOccured);
     const divref = useRef(null);
 
     const scrollToBottom = () => {
@@ -14,6 +13,7 @@ const EventDisplay = ({eventsOccured})=> {
     useEffect(()=>{
         scrollToBottom()
     }, [eventsOccured])
+
   return (
     <div className="event-display">
             {eventsOccured.map((event, index) => (
