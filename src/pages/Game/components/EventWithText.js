@@ -1,9 +1,10 @@
 import React from 'react';
 
 const EventWithText = ({ event, side, text }) => {
+    console.log("EVENT:", event);
     return (
         <>
-            <div className={`event relative flex ${side === 'left' ? 'justify-start' : 'justify-end'} w-full py-12`}>
+            <div className={`event relative flex ${side === 'left' ? 'justify-start' : 'justify-end'} w-full py-12 text-black`}>
                 {/* Event Content */}
                 <a
                     href={event.url || '#'} // Use the event URL or a placeholder if no URL is provided
