@@ -4,8 +4,10 @@ import EventDisplay from './components/eventDisplay';
 import CardsDeck from './components/cardsDeck';
 import RandomEventPopup from './components/randomEventPopup';
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function GameUI() {
+    const navigate = useNavigate();
     // Game state
     const [stats, setStats] = useState({
         military: 50,
@@ -46,6 +48,9 @@ function GameUI() {
 
 
                 const statsQueue = returnJson.data.content.stats.slice(1);
+                if(statsQueue.length == 0){
+                    navigate('/gameEnd', { replace: true });
+                }
                 const initialStats = returnJson.data.content.stats[0];
                 const eventQueue = returnJson.data.content.events; // assuming 1 event at a time for now
 
