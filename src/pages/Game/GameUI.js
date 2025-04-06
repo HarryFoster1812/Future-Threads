@@ -33,10 +33,14 @@ function GameUI() {
     }, [])
 
 
+
     const handleCardClick = (card) => {
         setYear(year+1);
         setSelectedCard(card);
         console.log("SELECTED CARD:", card);
+        console.log(`Playing audio: ${card.title}`)
+        const audioPlayer = new Audio(`http://localhost:5000/api/voice/${encodeURIComponent(card.title)}`)
+        audioPlayer.play()
 
         async function getData() {
             try {

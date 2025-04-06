@@ -20,12 +20,12 @@ function descriptionFromTitle(title) {
 	/* const testDescriptions = {meow: "Cats!!!!", beep: "BEEEEEEEEEEEEEEES!", ship: "beep beep the ship cargo space? car no go space, car go road"}
 	return testDescriptions[title] */
 	console.log(choiceData.filter((val) => {return val.title === title})[0]["description"])
-	return choiceData.filter((val) => {return val.title === title})[0]["description"]
+	return title + ": " + choiceData.filter((val) => {return val.title === title})[0]["description"]
 }
 
 async function generateText(description) {
 	const sse = await client.tts.sse({
-		speed: 1.15,
+		speed: 1,
 		lang_code: 'en'
 	  });
 	  
