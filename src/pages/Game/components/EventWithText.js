@@ -7,7 +7,7 @@ const EventWithText = ({ event, side, text }) => {
             <div className={`event relative flex justify-center items-center w-full py-12 text-black basis-3/5`}>
                 {/* Event Content */}
                 <a
-                    href={event.url || '#'} // Use the event URL or a placeholder if no URL is provided
+                    href={"/event/"+encodeURIComponent(JSON.stringify(event))} // Use the event URL or a placeholder if no URL is provided
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`event-content bg-white p-6 rounded-lg shadow-lg  hover:shadow-xl transition-shadow duration-300`}
