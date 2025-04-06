@@ -67,7 +67,7 @@ function GameUI() {
 
             const handleEventUpdate = (eventIndex) => {
                 // Check if we are adding the first event or subsequent events
-                if (index === 0) {
+                if (index === 0 && eventsHappened.length == 0) {
                     setEventsHappened([eventQueue[eventIndex]]);
                     console.log("FIRST EVENT:", eventQueue[eventIndex]);
                 } else {
