@@ -87,14 +87,13 @@ class GameManagerClass {
             let probability = this.getEventProbability(event);
             if (probability !== 0) {
                 possibleEvents.push([event, probability])
-            } else {
-                possibleEvents.push([event, 1])
             }
 
         }
         let selectedEvents = [];
         let i = 0;
         let max_events = random_int(0,4);
+        console.log('possible events',possibleEvents);
         while (i<max_events && possibleEvents.length>0) {
             let new_event_index = weighted_random_choice(possibleEvents);
             if (new_event_index !== -1) {
@@ -120,7 +119,6 @@ class GameManagerClass {
             if (typeof event["gameEnds"] !== "undefined") {
                 if (event["gameEnds"]) {
                     this.gameEnded = true;
-                    console.log('TEHFIAH OIHF FUCKING GAME ENDENDIENDE NOW GO GUFK OYOUR SELF');
                     return statChanges
                 }
             }
@@ -134,7 +132,6 @@ class GameManagerClass {
         }
     }
     getNewCards() {
-        console.log('new turn, game is ended: ',this.gameEnded)
         if (this.gameEnded) {
             return []
         }

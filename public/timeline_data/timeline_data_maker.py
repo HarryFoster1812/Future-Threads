@@ -1435,7 +1435,7 @@ data = [
 {
     "title": "Complete Environmental Collapse",
     "description": "Climate change creates storms so violent all man made structures are destroid, taking the humans inside with them.",
-    "image": "environmental_collapse.jpg",
+    "image": "environmental_collapse.webp",
     "source": "",
     "dateRange": {
       "earliestYear": 2027,
@@ -1507,7 +1507,7 @@ data = [
 {
     "title": "Complete Political Collapse",
     "description": "Governments lose control of their people, everyone kills each other.",
-    "image": "economic_collapse.jpg",
+    "image": "political_collapse.jpg",
     "source": "",
     "dateRange": {
       "earliestYear": 2027,
