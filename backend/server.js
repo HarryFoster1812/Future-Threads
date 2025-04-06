@@ -18,7 +18,12 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
-app.use(cors());
+
+app.use(cors({
+  origin: "http://localhost:3000", // or whatever your frontend port is
+  credentials: true
+}));
+
 
 let eventData = null;
 let choiceData = null;
@@ -101,8 +106,13 @@ app.post('/api/chat', async (req, res) => {
 
 
 app.post('/api/incYear', async (req, res) => {
-   console.log(req) 
-    req.session.gameManager.incrementYear();
+    const selectedCard = JSON.parse(req.body.selectedCard);
+    console.log(req.session.gameData);
+    var gameManager = new GameManagerClass(eventData, choiceData);
+    gameManager.fromJSON(req.session.gameData);
+    const response =  gameManager.incrementYear();
+    req.session.gameData = gameManager.toJSON(); 
+    res.json({ content: response });
 });
 
 app.post('/api/getGameState', async (req, res) => {
@@ -110,8 +120,12 @@ app.post('/api/getGameState', async (req, res) => {
 });
 
 app.post('/api/newGame', async (req, res) =>{
-    req.session.gameManager = new GameManagerClass(eventData, choiceData);
-    res.json({ content: req.session.gameManager.init() });
+    var gameManager = new GameManagerClass(eventData, choiceData);
+    
+    const return_data = gameManager.init();
+   req.session.gameData = gameManager.toJSON();
+    
+    res.json({ content: return_data });
 });
 
 
