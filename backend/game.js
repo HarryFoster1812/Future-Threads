@@ -134,6 +134,7 @@ class GameManagerClass {
         }
     }
     getNewCards() {
+        console.log('new turn, game is ended: ',this.gameEnded)
         if (this.gameEnded) {
             return []
         }
@@ -177,13 +178,15 @@ class GameManagerClass {
         this.pastEvents = data.past_events;
         this.stats = data.stats;
         this.currentYear = data.currentYear;
+        this.gameEnded = data.gameEnded;
     }
 
     toJSON(){
         return JSON.stringify( {
             past_events: this.pastEvents,
             stats: this.stats,
-            currentYear: this.currentYear
+            currentYear: this.currentYear,
+            gameEnded: this.gameEnded
         });
     }
 }
