@@ -110,7 +110,7 @@ app.post('/api/incYear', async (req, res) => {
     console.log(req.session.gameData);
     var gameManager = new GameManagerClass(eventData, choiceData);
     gameManager.fromJSON(req.session.gameData);
-    const response =  gameManager.incrementYear();
+    const response =  gameManager.incrementYear(selectedCard);
     req.session.gameData = gameManager.toJSON(); 
     res.json({ content: response });
 });
