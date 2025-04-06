@@ -90,7 +90,7 @@ class GameManagerClass {
         }
         let selectedEvents = [];
         let i = 0;
-        let max_events = random_int(1,4);
+        let max_events = random_int(0,2);
         while (i<max_events && possibleEvents.length>0) {
             let new_event_index = weighted_random_choice(possibleEvents);
             if (new_event_index !== -1) {
@@ -122,7 +122,6 @@ class GameManagerClass {
     }
     getNewCards() {
         let cards = [...this.cards];
-        console.log(this.cards)
         let selectedCards = [];
         for (let i=0;i<3;i++) {
             let index = random_int(0, this.cards.length - 1);
