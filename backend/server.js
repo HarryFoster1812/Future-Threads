@@ -107,7 +107,6 @@ app.post('/api/chat', async (req, res) => {
 
 app.post('/api/incYear', async (req, res) => {
     const selectedCard = JSON.parse(req.body.selectedCard);
-    console.log(req.session.gameData);
     var gameManager = new GameManagerClass(eventData, choiceData);
     gameManager.fromJSON(req.session.gameData);
     const response =  gameManager.incrementYear(selectedCard);

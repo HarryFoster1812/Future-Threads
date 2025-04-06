@@ -73,10 +73,10 @@ class GameManagerClass {
         statChanges.unshift(initialStats);
 
         this.currentYear+=1
-        console.log('TO FOUNDTO END',{events:newEvents, cards:this.currentCards, stats:statChanges});
+
         return {events:newEvents, cards:this.currentCards, stats:statChanges};
     }
-    // all past events, current stats, current cards
+
     getNewEvents() {
         let possibleEvents = [];
         for (let event of Object.values(this.events)) {
@@ -117,11 +117,11 @@ class GameManagerClass {
         }
     }
     getNewCards() {
-        let cards = JSON.parse(JSON.stringify(this.cards));
+        let cards = this.cards;
         let selectedCards = [];
         for (let i=0;i<3;i++) {
             let index = random_int(0, this.cards.length - 1);
-            selectedCards.push(this.cards[index]);
+            selectedCards.push(JSON.parse(JSON.stringify(this.cards[index])));
             cards.splice(index, 1)
         }
         for (let card of selectedCards) {

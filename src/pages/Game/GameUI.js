@@ -47,20 +47,17 @@ function GameUI() {
                 const initialStats = returnJson.data.content.stats[0];
                 const eventQueue = returnJson.data.content.events; // assuming 1 event at a time for now
 
-                console.log(statsQueue)
-                console.log(initialStats)
-                console.log(eventQueue)
-                setCurrentEvent(returnJson.data.content);
+                setCurrentEvent(null);
                 setStats(initialStats);
                 setSelectedCard(null);
 
-                runStatAnimation(statsQueue, eventQueue);
+                runStatAnimation(statsQueue, eventQueue, returnJson.data.content);
             } catch (err) {
                 console.error("Error fetching card data:", err);
             }
         }
 
-        function runStatAnimation(statsQueue, eventQueue) {
+        function runStatAnimation(statsQueue, eventQueue, jsonContent) {
             if (statsQueue.length === 0) return;
 
             let index = 0;
@@ -75,7 +72,7 @@ function GameUI() {
                 }
             };
 
-            function step() {
+            function step(jsonContent) {
                 setStats(statsQueue[index]);
 
                 handleEventUpdate(index);
@@ -83,11 +80,13 @@ function GameUI() {
                 index++;
 
                 if (index < statsQueue.length) {
-                    setTimeout(step, 1000); // Adjust timeout duration as needed
+                    setTimeout(() => step(jsonContent), 1000); // Adjust timeout duration as needed
+                } else {
+                    setTimeout(() => setCurrentEvent(jsonContent), 1000);
                 }
             }
 
-            step();
+            step(jsonContent);
         }
 
         getData();
