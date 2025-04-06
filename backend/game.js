@@ -106,18 +106,19 @@ class GameManagerClass {
         }
     }
     getNewCards() {
-        let cards = [...this.cards];
+        let cards = JSON.parse(JSON.stringify(this.cards));
         let selectedCards = [];
         for (let i=0;i<3;i++) {
             let index = random_int(0, this.cards.length - 1);
             selectedCards.push(this.cards[index]);
             cards.splice(index, 1)
         }
-        for (let card of cards) {
-            for (let stat of Object.keys(card.effects)) {
-                card[stat] = random_int(card[stat][0],card[stat][1]);
+        for (let card of selectedCards) {
+            for (let stat of Object.keys(card["effects"])) {
+                card["effects"][stat] = random_int(card["effects"][stat][0],card["effects"][stat][1]);
             }
         }
+        console.log('SOAJFIJAOIJAO',selectedCards);
         return selectedCards
     }
     getGameStat() {
