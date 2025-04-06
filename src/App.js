@@ -7,7 +7,8 @@ import Test from "./pages/apiTest/test";
 import NoPage from "./pages/NoPage/NoPage";
 import GameUI from "./pages/Game/GameUI";
 import TimeLine from "./pages/TimeLine/TimeLine";
-import AddEventForm from './pages/newEvent/EventAdd'
+import AddEventForm from './pages/newEvent/EventAdd';
+import GameEnd from './pages/gameEnd/gameEnd';
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
                     <Route path="newCard" element={<Test/>}/>
                     <Route path="timeline" element={<TimeLine/>}/>
                     <Route path="game" element={<GameUI />} />
+                    <Route path="gameEnd" element={<GameEnd />} />
                     <Route path="*" element={<NoPage />} />
                 </Route>
             </Routes>
