@@ -17,7 +17,7 @@ const EventDisplay = ({eventsOccured})=> {
   return (
     <div className="event-display">
             {eventsOccured.map((event, index) => (
-                    <EventWithText key={index} event={event} side={index % 7 === 0 ? 'left' : 'right'} text={"Hello, World!"} />
+                    <EventWithText key={index} event={event} side={index % 7 === 0 ? 'left' : 'right'} />
             ))}
             <div ref={divref}/>
 
