@@ -7,6 +7,8 @@ const { createClient, toWav } = require('@neuphonic/neuphonic-js');
 const dotenv = require('dotenv');
 const path = require("path");
 
+const tl_data = require("../public/timeline_data/timeline_data.json")
+
 dotenv.config();
 
 const client = createClient({ apiKey: process.env.NEUPHONICS_API}); 
@@ -15,8 +17,10 @@ const outputDir = 'voiceFiles'
 
 
 function descriptionFromTitle(title) {
-	const testDescriptions = {meow: "Cats!!!!", beep: "BEEEEEEEEEEEEEEES!", ship: "beep beep the ship cargo space? car no go space, car go road"}
-	return testDescriptions[title]
+	/* const testDescriptions = {meow: "Cats!!!!", beep: "BEEEEEEEEEEEEEEES!", ship: "beep beep the ship cargo space? car no go space, car go road"}
+	return testDescriptions[title] */
+	console.log(Object.entries(tl_data).filter((val) => {return val[1].title === title})[0][1]["description"])
+	return Object.entries(tl_data).filter((val) => {return val[1].title === title})[0][1]["description"]
 }
 
 async function generateText(description) {
