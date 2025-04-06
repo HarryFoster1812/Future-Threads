@@ -118,7 +118,6 @@ class GameManagerClass {
                 card["effects"][stat] = random_int(card["effects"][stat][0],card["effects"][stat][1]);
             }
         }
-        console.log('SOAJFIJAOIJAO',selectedCards);
         return selectedCards
     }
     getGameStat() {

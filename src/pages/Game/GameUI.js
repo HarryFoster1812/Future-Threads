@@ -23,7 +23,6 @@ function GameUI() {
         async function getData(){
             const initData = await axios.post('http://localhost:5000/api/newGame');
 
-            console.log("INIT DATA:", initData);
             setCurrentEvent(initData.data.content);
             setStats(initData.data.content.stats);
         }
@@ -32,25 +31,24 @@ function GameUI() {
 
   const handleCardClick = (card) => {
     setSelectedCard(card);
+    console.log("SELECTED CARD:", card);
     
-    const returnJson = axios("http://localhost:5000/api/incYear", {selectedCard: card});
-    console.log(returnJson)
     // Animate stat changes after delay
-    setTimeout(() => {
-      setStats(prev => {
-        const newStats = { ...prev };
-        Object.keys(card.effects).forEach(stat => {
-          newStats[stat] = Math.max(0, Math.min(100, prev[stat] + card.effects[stat]));
-        });
-        return newStats;
-      });
+        async function getData(){
+            const returnJson = await axios.post("http://localhost:5000/api/incYear", {selectedCard: card});
 
-        //setCurrentEvent();
-        //setEventsHappened((prev) => [...prev, currentEvent]);
+            console.log("CARD SELECT DATA:", returnJson);
+            setCurrentEvent(returnJson.data.content);
+            setStats(returnJson.data.content.stats);
+            // setCurrentEvent();
+            // setEventsHappened((prev) => [...prev, currentEvent]);
+        }
+
+        getData();
+
+
         //setSelectedCard(null);
-    }, 500);
   };
-    console.log("CURRENT EVENT:", currentEvent)
 
   return (
     <div className="game-container">
