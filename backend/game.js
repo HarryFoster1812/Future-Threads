@@ -23,7 +23,7 @@ function weighted_random_choice(data) {
         total_weight += info[1];
     }
     if (total_weight === 0) {
-        return 0;
+        return -1;
     }
     let ran_val = random_range(0, total_weight);
     for (let i=0;i<data.length;i++) {
@@ -90,12 +90,16 @@ class GameManagerClass {
         }
         let selectedEvents = [];
         let i = 0;
-        let max_events = random_int(2,4);
+        let max_events = random_int(1,4);
         while (i<max_events && possibleEvents.length>0) {
             let new_event_index = weighted_random_choice(possibleEvents);
-            selectedEvents.push(possibleEvents[new_event_index][0]);
-            possibleEvents.splice(new_event_index, 1);
-            i++;
+            if (new_event_index !== -1) {
+                selectedEvents.push(possibleEvents[new_event_index][0]);
+                possibleEvents.splice(new_event_index, 1);
+                i++;
+            } else if (Math.random()<0.2){
+                i++;
+            }
         }
         return selectedEvents
     }
@@ -137,7 +141,7 @@ class GameManagerClass {
 
     getEventProbability(event) {
         if (event["dateRange"]["earliestYear"] < this.currentYear || event["dateRange"]["latestYear"] > this.currentYear) {
-            return 0
+            //return 0
         }
         let probability = event["baseProbability"];
         for (let stat of Object.keys(event["statRanges"])) {

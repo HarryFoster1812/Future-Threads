@@ -158,7 +158,7 @@ data = [
             "politics": {
                 "min": 10,
                 "max": 100,
-                "probabilitySwing": "volatile"
+                "probabilitySwing": 0,
             },
             "economy": {
                 "min": 30,
@@ -274,11 +274,11 @@ data = [
         "statEffects": {
             "qualityOfLife": {
                 "change": -9,
-                "range": -4
+                "range": 4
             },
             "economy": {
                 "change": -7,
-                "range": -3
+                "range": 3
             }
         }
     },
@@ -289,38 +289,18 @@ data = [
     "image": "apophis_flyby.jpg",
     "source": ["https://www.nasa.gov/feature/planetary-defense-in-action-nasa-analysts-track-asteroid-apophis"],
     "dateRange": {
-      "earliestYear": 2029,
-      "latestYear": 2029
+      "earliestYear": 2026,
+      "latestYear": 2030
     },
     "isPositive": True,
     "tags": ["Space", "Natural Disaster", "Science"],
     "baseProbability": 3,
     "statRanges": {
-      "politics": {
-        "min": 40,
-        "max": 90,
-        "probabilitySwing": 0
-      },
-      "economy": {
-        "min": 30,
-        "max": 60,
-        "probabilitySwing": 1
-      },
-      "environment": {
-        "min": 10,
-        "max": 40,
-        "probabilitySwing": 0
-      },
       "military": {
         "min": 20,
-        "max": 50,
-        "probabilitySwing": 0
-      },
-      "qualityOfLife": {
-        "min": 50,
         "max": 80,
-        "probabilitySwing": 1
-      }
+        "probabilitySwing": 0
+        }
     },
     "statEffects": {
       "qualityOfLife": {
@@ -347,39 +327,34 @@ data = [
     "baseProbability": 5,
     "statRanges": {
       "politics": {
-        "min": 20,
+        "min": 00,
         "max": 60,
         "probabilitySwing": -1
       },
       "economy": {
-        "min": 20,
-        "max": 40,
+        "min": 0,
+        "max": 50,
         "probabilitySwing": -1
       },
       "environment": {
-        "min": 50,
-        "max": 100,
-        "probabilitySwing": 1
-      },
-      "military": {
-        "min": 10,
+        "min": 0,
         "max": 30,
-        "probabilitySwing": 0
+        "probabilitySwing": -1
       },
       "qualityOfLife": {
-        "min": 20,
-        "max": 50,
+        "min": 0,
+        "max": 70,
         "probabilitySwing": -1
       }
     },
     "statEffects": {
       "qualityOfLife": {
         "change": -15,
-        "range": -5
+        "range": 5
       },
       "economy": {
         "change": -10,
-        "range": -3
+        "range": 3
       },
       "environment": {
         "change": 20,
@@ -400,40 +375,25 @@ data = [
     "tags": ["AI", "Economy", "Social"],
     "baseProbability": 4,
     "statRanges": {
-      "politics": {
-        "min": 20,
-        "max": 50,
-        "probabilitySwing": 0
-      },
       "economy": {
-        "min": 10,
-        "max": 40,
-        "probabilitySwing": -1
-      },
-      "environment": {
-        "min": 30,
-        "max": 60,
-        "probabilitySwing": 0
-      },
-      "military": {
-        "min": 5,
-        "max": 20,
-        "probabilitySwing": 0
+        "min": 40,
+        "max": 100,
+        "probabilitySwing": 1,
       },
       "qualityOfLife": {
-        "min": 10,
-        "max": 40,
+        "min": 0,
+        "max": 70,
         "probabilitySwing": -1
       }
     },
     "statEffects": {
       "economy": {
         "change": -15,
-        "range": -5
+        "range": 5
       },
       "qualityOfLife": {
         "change": -10,
-        "range": -3
+        "range": 3
       }
     }
   },
@@ -451,30 +411,20 @@ data = [
     "baseProbability": 3,
     "statRanges": {
       "politics": {
-        "min": 30,
+        "min": 00,
         "max": 60,
         "probabilitySwing": -1
       },
       "economy": {
-        "min": 20,
-        "max": 50,
-        "probabilitySwing": 0
-      },
-      "environment": {
-        "min": 10,
-        "max": 30,
-        "probabilitySwing": 0
+        "min": 40,
+        "max": 100,
+        "probabilitySwing": 0.2
       },
       "military": {
         "min": 50,
-        "max": 90,
+        "max": 100,
         "probabilitySwing": 1
       },
-      "qualityOfLife": {
-        "min": 20,
-        "max": 50,
-        "probabilitySwing": -1
-      }
     },
     "statEffects": {
       "military": {
@@ -483,7 +433,7 @@ data = [
       },
       "qualityOfLife": {
         "change": -10,
-        "range": -4
+        "range": 4
       }
     }
   },
@@ -501,35 +451,30 @@ data = [
     "baseProbability": 6,
     "statRanges": {
       "politics": {
-        "min": 40,
-        "max": 70,
-        "probabilitySwing": -1
-      },
-      "economy": {
-        "min": 20,
+        "min": 0,
         "max": 60,
         "probabilitySwing": -1
       },
-      "environment": {
+      "economy": {
         "min": 50,
         "max": 100,
-        "probabilitySwing": -1
+        "probabilitySwing": 1
       },
       "military": {
-        "min": 60,
+        "min": 70,
         "max": 100,
         "probabilitySwing": 1
       },
       "qualityOfLife": {
-        "min": 10,
-        "max": 40,
+        "min": 0,
+        "max": 50,
         "probabilitySwing": -1
       }
     },
     "statEffects": {
       "environment": {
         "change": -30,
-        "range": -10
+        "range": 10
       },
       "military": {
         "change": 20,
@@ -537,7 +482,7 @@ data = [
       },
       "qualityOfLife": {
         "change": -20,
-        "range": -8
+        "range": 8
       }
     }
   },
@@ -1481,6 +1426,244 @@ data = [
       "environment": {
         "change": -30,
         "range": -12
+      }
+    }
+  },
+  {
+    "title": "Regional Election Shifts Populist",
+    "description": "A major regional election results in a populist or nationalist party gaining control, influencing local policies and international relations.",
+    "image": "populist_election.jpg",
+    "source": ["https://www.bbc.com/news/world"],
+    "dateRange": {
+      "earliestYear": 2025,
+      "latestYear": 2035
+    },
+    "isPositive": False,
+    "tags": ["Politics"],
+    "baseProbability": 6,
+    "statRanges": {
+      "politics": {
+        "min": 40,
+        "max": 80,
+        "probabilitySwing": -1
+      },
+      "economy": {
+        "min": 40,
+        "max": 70,
+        "probabilitySwing": 0
+      },
+      "environment": {
+        "min": 30,
+        "max": 60,
+        "probabilitySwing": 0
+      },
+      "military": {
+        "min": 40,
+        "max": 70,
+        "probabilitySwing": -1
+      },
+      "qualityOfLife": {
+        "min": 40,
+        "max": 70,
+        "probabilitySwing": 0
+      }
+    },
+    "statEffects": {
+      "politics": {
+        "change": -5,
+        "range": -3
+      }
+    }
+  },
+  {
+    "title": "Minor Global Virus Outbreak",
+    "description": "A novel virus emerges but is quickly contained through local quarantines and rapid medical response, with limited global spread.",
+    "image": "minor_outbreak.jpg",
+    "source": ["https://www.who.int/"],
+    "dateRange": {
+      "earliestYear": 2025,
+      "latestYear": 2040
+    },
+    "isPositive": False,
+    "tags": ["Medicine", "Social"],
+    "baseProbability": 7,
+    "statRanges": {
+      "politics": {
+        "min": 30,
+        "max": 60,
+        "probabilitySwing": 0
+      },
+      "economy": {
+        "min": 20,
+        "max": 50,
+        "probabilitySwing": -1
+      },
+      "environment": {
+        "min": 30,
+        "max": 50,
+        "probabilitySwing": 0
+      },
+      "military": {
+        "min": 10,
+        "max": 30,
+        "probabilitySwing": 0
+      },
+      "qualityOfLife": {
+        "min": 20,
+        "max": 60,
+        "probabilitySwing": -1
+      }
+    },
+    "statEffects": {
+      "qualityOfLife": {
+        "change": -6,
+        "range": -2
+      },
+      "economy": {
+        "change": -4,
+        "range": -1
+      }
+    }
+  },
+  {
+    "title": "Urban Riots in Major City",
+    "description": "Protests over economic or racial injustice escalate into riots in a large city, prompting military or police intervention and temporary disruption.",
+    "image": "urban_riot.jpg",
+    "source": ["https://www.reuters.com/"],
+    "dateRange": {
+      "earliestYear": 2025,
+      "latestYear": 2035
+    },
+    "isPositive": False,
+    "tags": ["Social", "Politics"],
+    "baseProbability": 7,
+    "statRanges": {
+      "politics": {
+        "min": 40,
+        "max": 80,
+        "probabilitySwing": -1
+      },
+      "economy": {
+        "min": 30,
+        "max": 60,
+        "probabilitySwing": -1
+      },
+      "environment": {
+        "min": 20,
+        "max": 40,
+        "probabilitySwing": 0
+      },
+      "military": {
+        "min": 50,
+        "max": 80,
+        "probabilitySwing": 0
+      },
+      "qualityOfLife": {
+        "min": 20,
+        "max": 60,
+        "probabilitySwing": -1
+      }
+    },
+    "statEffects": {
+      "qualityOfLife": {
+        "change": -7,
+        "range": -3
+      }
+    }
+  },
+  {
+    "title": "Breakthrough in Battery Recycling",
+    "description": "A new method for efficiently recycling lithium-ion batteries is commercialized, reducing waste and improving supply chain sustainability.",
+    "image": "battery_recycling.jpg",
+    "source": ["https://www.nature.com/"],
+    "dateRange": {
+      "earliestYear": 2026,
+      "latestYear": 2035
+    },
+    "isPositive": True,
+    "tags": ["Science", "Environment", "Technology"],
+    "baseProbability": 8,
+    "statRanges": {
+      "politics": {
+        "min": 30,
+        "max": 50,
+        "probabilitySwing": 0
+      },
+      "economy": {
+        "min": 40,
+        "max": 70,
+        "probabilitySwing": 1
+      },
+      "environment": {
+        "min": 50,
+        "max": 80,
+        "probabilitySwing": 1
+      },
+      "military": {
+        "min": 20,
+        "max": 40,
+        "probabilitySwing": 0
+      },
+      "qualityOfLife": {
+        "min": 30,
+        "max": 60,
+        "probabilitySwing": 1
+      }
+    },
+    "statEffects": {
+      "environment": {
+        "change": 6,
+        "range": 2
+      },
+      "economy": {
+        "change": 5,
+        "range": 2
+      }
+    }
+  },
+  {
+    "title": "Low-Earth Orbit Traffic Regulations Enacted",
+    "description": "Global space agencies agree to enforce new satellite and debris management rules, reducing collision risks and improving orbital sustainability.",
+    "image": "leo_regulations.jpg",
+    "source": ["https://www.nasa.gov/"],
+    "dateRange": {
+      "earliestYear": 2027,
+      "latestYear": 2040
+    },
+    "isPositive": True,
+    "tags": ["Technology", "Politics", "Environment"],
+    "baseProbability": 6,
+    "statRanges": {
+      "politics": {
+        "min": 50,
+        "max": 80,
+        "probabilitySwing": 1
+      },
+      "economy": {
+        "min": 30,
+        "max": 60,
+        "probabilitySwing": 0
+      },
+      "environment": {
+        "min": 40,
+        "max": 70,
+        "probabilitySwing": 1
+      },
+      "military": {
+        "min": 30,
+        "max": 50,
+        "probabilitySwing": 0
+      },
+      "qualityOfLife": {
+        "min": 20,
+        "max": 50,
+        "probabilitySwing": 0
+      }
+    },
+    "statEffects": {
+      "environment": {
+        "change": 4,
+        "range": 1
       }
     }
   }
