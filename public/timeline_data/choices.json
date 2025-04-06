@@ -180,6 +180,207 @@
 			"politics": [-5, 10],
 			"environment": [5, 10]
 		}
+	},
+	{
+		"title": "Cut Nuclear Funding",
+		"description": "Steam! No More",
+		"effects": {
+			"economy": [-5, 5],
+			"qualityOfLife": [-10, 5],
+			"politics": [5, 10],
+			"environment": [-10, -5]
+		}
+	},
+	{
+		"title": "Cut Defense Spending",
+		"description": "Guns, not a lot of Guns",
+		"effects": {
+			"economy": [-5, 5],
+			"politics": [-5, 10],
+			"military": [-20, -10]
+		}
+	},
+	{
+		"title": "Invade France",
+		"description": "Who else but the French?",
+		"effects": {
+			"economy": [5,20],
+			"qualityOfLife": [5, 20],
+			"politics": [-5, 20],
+			"environment": [5, 10],
+			"military": [5, 10]
+		},
+		"requires": ["France"]
+	},
+	{
+		"title": "Decrease Taxes",
+		"description": "My money",
+		"effects": {
+			"economy": [-10, 5],
+			"qualityOfLife": [-10, -2],
+			"politics": [5, 15],
+			"military": [-10, -5]
+		}
+	},
+	{
+		"title": "No Taxes",
+		"description": "MINEEEE",
+		"effects": {
+			"economy": [-20, -10],
+			"qualityOfLife": [-20, -10],
+			"politics": [15, 20],
+			"environment": [-10, -5],
+			"military": [-20, -10]
+		},
+		"requires": ["Decrease Taxes"]
+	},
+	{
+		"title": "Bioweapon Funding",
+		"description": "Behold, dust",
+		"effects": {
+			"economy": [2,5],
+			"qualityOfLife": [-5, 0],
+			"politics": [-5, 5],
+			"environment": [-10, -5],
+			"military": [10, 15]
+		}
+	},
+	{
+		"title": "Space Program Funding",
+		"description": "SPACEEEEEEEEEEEEEE!",
+		"effects": {
+			"economy": [10, 15],
+			"qualityOfLife": [5, 10],
+			"politics": [-5, 5],
+			"environment": [-5, 10],
+			"military": [5, 10]
+		}
+	},
+	{
+		"title": "Nationalize the Rail",
+		"description": "Oops!",
+		"effects": {
+			"economy": [5, 10],
+			"qualityOfLife": [5, 10],
+			"politics": [-10, -5],
+			"environment": [5, 10]
+		},
+		"requires": ["Privatize Rail"]
+	},
+	{
+		"title": "Raise Education Leaving Age",
+		"description": "Forever 21",
+		"effects": {
+			"economy": [-5, 5],
+			"qualityOfLife": [-10, 10],
+			"politics": [-5, 8],
+			"military": [2, 6]
+		}
+	},
+	{
+		"title": "Increase Alcohol Buying Age",
+		"description": "Drinking and Driving?",
+		"effects": {
+			"economy": [-10, 5],
+			"qualityOfLife": [-5, 5],
+			"politics": [-10, 5],
+			"environment": [-5, 10]
+		},
+		"requires": ["Raise Education Leaving Age"]
+	},
+	{
+		"title": "Increase Taxes",
+		"description": "Weeeeeeeeee!",
+		"effects": {
+			"economy": [-15, 15],
+			"qualityOfLife": [-5, 0],
+			"politics": [-10, -5],
+			"environment": [5, 10],
+			"military": [10, 15]
+		}
+	},
+	{
+		"title": "Mining Investments",
+		"description": "Diggy Diggy Hole",
+		"effects": {
+			"economy": [10, 15],
+			"qualityOfLife": [-10, -5],
+			"politics": [0, 5],
+			"environment": [-20, -10]
+		}
+	},
+	{
+		"title": "Steel Investments",
+		"description": "I keep steeling jokes",
+		"effects": {
+			"economy": [10, 15],
+			"qualityOfLife": [-10, -5],
+			"politics": [0, 5],
+			"environment": [-20, -10]
+		}
+	},
+	{
+		"title": "Oil Investments",
+		"description": "Black.... Gold?",
+		"effects": {
+			"economy": [10, 15],
+			"qualityOfLife": [-10, -5],
+			"politics": [0, 5],
+			"environment": [-20, -10]
+		}
+	},
+	{
+		"title": "Big Pharma Funding",
+		"description": "Yes, they do massively influence what drugs you use",
+		"effects": {
+			"economy": [-10, 0],
+			"qualityOfLife": [-10, 5],
+			"politics": [5, 10],
+			"environment": [-5, 0],
+			"military": [0, 5]
+		}
+	},
+	{
+		"title": "Restrict Free Speech",
+		"description": "The party told you to reject the evidence of your eyes and ears. It was their final, most essential command",
+		"effects": {
+			"economy": [10, 20],
+			"qualityOfLife": [-30, -20],
+			"politics": [10, 30],
+			"military": [10, 30]
+		}
+	},
+	{
+		"title": "Reduction in Water Regulations",
+		"description": "Gotta add the green somewhere",
+		"effects": {
+			"economy": [5, 10],
+			"qualityOfLife": [-20, -15],
+			"politics": [5, 10],
+			"environment": [-20, -25]
+		},
+		"requires": ["Big Pharma Funding"]
+	},
+	{
+		"title": "Remove Vaccine Requirements",
+		"description": "Measles? whats that?",
+		"effects": {
+			"economy": [-15, -10],
+			"qualityOfLife": [-15, -10],
+			"politics": [-10, 5],
+			"environment": [-15, -5],
+			"military": [-5, 0]
+		}
+	},
+	{
+		"title": "Improve Uni Funding",
+		"description": "Student loans aint cheap",
+		"effects": {
+			"economy": [0, 5],
+			"qualityOfLife": [5, 10],
+			"politics": [-5, 5]
+		},
+		"requires": ["Increase Taxes"]
 	}
 ]
 
