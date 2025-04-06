@@ -6,8 +6,7 @@
 **Team Size**: 4 members  
 **Event**: Manchester University Student Hack 2025  
 **Main Theme**: Hack the Future  
-**Optional Challenges**: 2080 Challenge, Text-to-Speech Challenge
-
+**Achievement**: 4th Place (First Hackathon!)
 ---
 
 
@@ -34,6 +33,14 @@ FutureThreads follows a **separated architecture**, consisting of a **frontend**
 - **AI Integration (Planned)**: While not fully implemented during the hackathon, we planned to use **Google Gemini** to dynamically generate data, providing a more varied and rich gameplay experience.
   
 ---
+
+## The Hackathon Experience
+
+This was my **very first hackathon**, and it was an absolutely incredible experience! The coding time limit was **24 intense hours** from midday saturady to midday sunday, and it was a complete rollercoaster ride from start to finish. 
+
+There was **no sleep**, just **lots of coffee** to keep us fueled and focused as we worked non-stop to bring our idea to life. The pressure was high, and the clock was ticking.
+
+Despite the challenges, we managed to push through and finish in **4th place**, which was an amazing achievement, especially as it was my first hackathon. The experience taught me so much about coding under pressure, collaboration, and pushing through exhaustion. I can’t wait to take part in more hackathons in the future!
 
 ## Challenges
 
