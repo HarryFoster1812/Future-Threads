@@ -121,7 +121,8 @@ class GameManagerClass {
         }
     }
     getNewCards() {
-        let cards = this.cards;
+        let cards = [...this.cards];
+        console.log(this.cards)
         let selectedCards = [];
         for (let i=0;i<3;i++) {
             let index = random_int(0, this.cards.length - 1);

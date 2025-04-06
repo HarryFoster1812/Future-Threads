@@ -22,7 +22,7 @@ const EventWithText = ({ event, side, text }) => {
                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2 bg-white border-4 border-orange-500 rounded-full w-8 h-8 z-20"></div>
             </div>
             <div className={`event relative flex ${side === 'left' ? 'justify-end' : 'justify-start'} w-full py-12`}>
-                <p>{text}</p>
+                <p>{event.description}</p>
             </div>
         </>
     );

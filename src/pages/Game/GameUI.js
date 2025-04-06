@@ -18,6 +18,7 @@ function GameUI() {
     const [currentEvent, setCurrentEvent] = useState();
     const [selectedCard, setSelectedCard] = useState({});
     const [eventsHappened, setEventsHappened] = useState([]);
+    const [year, setYear] = useState(2025);
 
     useEffect(()=> {
         async function getData(){
@@ -31,6 +32,7 @@ function GameUI() {
 
 
     const handleCardClick = (card) => {
+        setYear(year+1);
         setSelectedCard(card);
         console.log("SELECTED CARD:", card);
 
@@ -94,15 +96,19 @@ function GameUI() {
 
     return (
         <div className="game-container">
+            <h1 className="text-4xl text-center">{"Current Year is " + year}</h1>
             <StatsBar stats={stats} />
             <EventDisplay eventsOccured={eventsHappened} />
 
+
             {currentEvent && (
+                <>
                 <CardsDeck 
                     cards={currentEvent.cards} 
                     onCardClick={handleCardClick} 
                     selectedCardId={selectedCard?.id} 
                 />
+                </>
             )}
 
             {/* : (
