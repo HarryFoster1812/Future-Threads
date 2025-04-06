@@ -12,20 +12,20 @@ const Home = () => {
       >
         Start Game
       </a>
-      <div className="flex gap-4">
-        <a 
-          className="px-6 py-3 bg-green-400 text-black rounded-lg text-lg font-semibold hover:bg-green-500 transition duration-300"
-          href="/newEvent"
-        >
-          Add New Event
-        </a>
-        <a 
-          className="px-6 py-3 bg-blue-400 text-black rounded-lg text-lg font-semibold hover:bg-blue-500 transition duration-300"
-          href="/newCard"
-        >
-          Add New Action Card
-        </a>
-      </div>
+      {/* <div className="flex gap-4"> */}
+      {/*   <a  */}
+      {/*     className="px-6 py-3 bg-green-400 text-black rounded-lg text-lg font-semibold hover:bg-green-500 transition duration-300" */}
+      {/*     href="/newEvent" */}
+      {/*   > */}
+      {/*     Add New Event */}
+      {/*   </a> */}
+      {/*   <a  */}
+      {/*     className="px-6 py-3 bg-blue-400 text-black rounded-lg text-lg font-semibold hover:bg-blue-500 transition duration-300" */}
+      {/*     href="/newCard" */}
+      {/*   > */}
+      {/*     Add New Action Card */}
+      {/*   </a> */}
+      {/* </div> */}
     </div>
   );
 };
